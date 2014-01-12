@@ -1,13 +1,13 @@
 Node-shodan-client
 ==================
-A **[Node.js](http://nodejs.org/) (JavaScript) library for accessing [SHODAN JSON API](https://developers.shodan.io/shodan-rest.html)**. It includes all the methods officially supported by the API. Moreover two more ones which allow to obtain the most popular search queries. It was designed to be included in [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) 2.0 version.
+A **[Node.js](http://nodejs.org/) (JavaScript) library for accessing [SHODAN JSON API](https://developers.shodan.io/shodan-rest.html)**. It includes all officially supported methods. Moreover two more were added, which allow to obtain the most popular search queries. It was designed to be included in [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) 2.0 version.
 
 - **GitHub repo**: [https://github.com/jesusprubio/node-shodan-client](https://github.com/jesusprubio/node-shodan-client)
 - **IRC(Freenode)**: #breakingVoIP
 
 Use
 ---
-*NOTE: All methods of the API need a valid key. You can get it [here](http://www.shodanhq.com/api_doc). But popular ones can be reached through RSS so no key is needed.*
+*NOTE: All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc). But popular ones can be reached through RSS so no key is needed.*
 
 This module has next dependencies (included in "package.json" file):
 
@@ -30,7 +30,6 @@ var ShodanClient = require('../../lib/shodan.js'),
     };
     
 shodanClient.search(searchOptions,  function (data, err) {
-    console.log('\n------------------- search -------------------');
     if (err) {
         console.log('ERROR: shodanClient.search: ' + err);
     } else {
@@ -61,7 +60,7 @@ shodanClient.host "1.1.1.1", (data, err) ->
     console.log data
 ```
 
-[**Full examples**](../tree/master/examples)
+[**Full examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
 
 Developer guide
 ---------------
