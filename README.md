@@ -65,7 +65,7 @@ shodanClient.host "1.1.1.1", (data, err) ->
 Developer guide
 ---------------
 - Use [GitHub pull requests](https://help.github.com/articles/using-pull-requests).
-- Respect the ".jshintrc" included file or coffeeLint default options (examples).
+- Respect the ".jshintrc" included file or CoffeeLint default options (examples).
 
 TODO
 ----
