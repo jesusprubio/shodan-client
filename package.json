@@ -1,10 +1,10 @@
 {
-	"name" : "node-shodan-client",
+	"name" : "shodan-client",
 	"version" : "0.0.1",
 	"description" : "A Node.js library for accessing SHODAN API (JSON), https://developers.shodan.io/shodan-rest.html",
 	"author" : "Jesus Perez <jesusprubio@gmail.com>",
 	"contributors" : [],
-	"main": "./lib/shodan",
+	"main": "./lib/shodan.js",
 	"repository" : {
 		"type" : "git",
 		"url"  : "https://github.com/jesusprubio/node-shodan-client/node-shodan-client.git"

@@ -16,7 +16,7 @@ This module has next dependencies (included in "package.json" file):
 
 **JavaScript**
 ```javascript
-var ShodanClient = require('../../lib/shodan.js'),
+var ShodanClient = require('shodan-client'),
     options      = {
         key : 'YOURKEYHERE!!!!!!!!!!!!!!!!!!!!!!!!!',
     },
@@ -40,7 +40,7 @@ shodanClient.search(searchOptions,  function (data, err) {
 
 **CoffeeScript**
 ```coffeescript
-ShodanClient = require("../../lib/shodan.js")
+ShodanClient = require("shodan-client")
 
 options =
   key : "YOURKEYHERE!!!!!!!!!!!!!!!!!!!!!!!!!",
