@@ -54,8 +54,8 @@ shodanClient.info(function (data, err) {
         console.log(data);
     }
 });
-//
-//// A premium account is needed to get this info
+
+// A premium account is needed to get this info
 shodanClient.locations('apache', function (data, err) {
     console.log('\n------------------- locations -------------------');
     if (err) {
