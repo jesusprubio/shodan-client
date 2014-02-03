@@ -13,7 +13,7 @@ This module has next dependencies (included in "package.json" file):
 
 - **[request](https://github.com/mikeal/request)**
 - **[xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)**
-- ++[lodash](https://github.com/lodash/lodash)**
+- **[lodash](https://github.com/lodash/lodash)**
 
 ```javascript
 var ShodanClient = require('shodan-client'),
