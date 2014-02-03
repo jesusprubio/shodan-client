@@ -17,15 +17,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 'use strict';
 
-// SHODAN popular searches can be reached through RSS
 // A valid API key is not needed here
 // http://www.shodanhq.com/browse
-var ShodanClient = require('../../lib/shodan.js'),
+var ShodanClient = require('../lib/shodan.js'),
     options      = {
         timeout : 10000
     },
     shodanClient = new ShodanClient(options);
 
+
+// ---------------------- POPULAR RSS ----------------------
+
+// ---------------------- POPULAR ----------------------
 shodanClient.popular(function (data, err) {
     console.log('\n------------------- popular -------------------');
     if (err) {
@@ -35,6 +38,7 @@ shodanClient.popular(function (data, err) {
     }
 });
 
+// ---------------------- POPULARTAG ----------------------
 // Even they can be searched using an specific tag ("Popular tags")
 shodanClient.popularTag('voip', function (data, err) {
     console.log('\n------------------- popular (voip tag) -------------------');

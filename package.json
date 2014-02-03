@@ -1,8 +1,12 @@
 {
 	"name" : "shodan-client",
-	"version" : "0.0.1",
-	"description" : "A Node.js library for accessing SHODAN API (JSON), https://developers.shodan.io/shodan-rest.html",
-	"author" : "Jesus Perez <jesusprubio@gmail.com>",
+	"version" : "0.0.2",
+	"description" : "A Node.js library for accessing SHODAN API, https://developer.shodan.io/api",
+    "author" : {
+		"name"  : "Jesus Perez <@jesusprubio>",
+		"email" : "jesusprubio gmail com",
+		"url"   : "http://jesusprubio.name/"
+	},
 	"contributors" : [],
 	"main" : "./lib/shodan.js",
 	"repository" : {
@@ -19,8 +23,9 @@
 	],
 	"homepage" : "https://github.com/jesusprubio/node-shodan-client",
 	"dependencies" : {
-		"request" : "2.31.x",
-        "xml2js"  : "0.4.x"
+		"request"    : "2.31.x",
+        "xml2js"     : "0.4.x",
+        "lodash"     : "2.4.x"
     },
 	"engines" : {
 		"node" : "0.10.x"

@@ -1,6 +1,6 @@
 Node-shodan-client
 ==================
-A **[Node.js](http://nodejs.org/) (JavaScript) library for accessing [SHODAN JSON API](https://developers.shodan.io/shodan-rest.html)**. It includes all officially supported methods. Moreover two more were added, which allow to obtain the most popular search queries. It was designed to be included in [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) 2.0 version.
+A **[Node.js](http://nodejs.org/) (JavaScript) library for accessing the new [SHODAN API](https://developer.shodan.io/api)**. It includes all officially supported methods (REST, Streaming and Exploits APIs). Moreover two more were added, which allow to obtain the most popular search queries. It was designed to be included in [Bluebox-ng](https://github.com/jesusprubio/bluebox-ng) 2.0 version.
 
 - **GitHub repo**: [https://github.com/jesusprubio/node-shodan-client](https://github.com/jesusprubio/node-shodan-client)
 - **IRC(Freenode)**: #breakingVoIP
@@ -13,8 +13,8 @@ This module has next dependencies (included in "package.json" file):
 
 - **[request](https://github.com/mikeal/request)**
 - **[xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)**
+- ++[lodash](https://github.com/lodash/lodash)**
 
-**JavaScript**
 ```javascript
 var ShodanClient = require('shodan-client'),
     options      = {
@@ -23,43 +23,45 @@ var ShodanClient = require('shodan-client'),
     shodanClient = new ShodanClient(options),
     searchOptions = {
         query: 'asterisk',
-        pageNumber: 1,
-        filters: {
-            port: 5060
-        }
+        limit: 5,
+        facets: 'port:100',
+        minify: false
     };
-    
+
 shodanClient.search(searchOptions,  function (data, err) {
+    console.log('\n------------------- search -------------------');
     if (err) {
         console.log('ERROR: shodanClient.search: ' + err);
     } else {
         console.log(data);
     }
 });
+
+shodanClient.streamBanners(function (data, err) {
+    console.log('\n------------------- streamBanners -------------------');
+    if (err) {
+        console.log('ERROR: shodanClient.streamBanners: ' + err);
+    } else {
+        console.log(data);
+    }
+});
+
+var searchOptionsExploits = {
+    query: 'asterisk',
+    facets: 'port:100',
+    page: 1
+};
+
+shodanClient.exploitSearch(searchOptionsExploits,  function (data, err) {
+    console.log('\n------------------- exploitSearch -------------------');
+    if (err) {
+        console.log('ERROR: shodanClient.exploitSearch: ' + err);
+    } else {
+        console.log(data);
+    }
+});
+
 ```
-
-**CoffeeScript**
-```coffeescript
-ShodanClient = require("shodan-client")
-
-options =
-  key : "YOURKEYHERE!!!!!!!!!!!!!!!!!!!!!!!!!",
-
-shodanClient = new ShodanClient(options)
-
-shodanClient.count "apache", (data, err) ->
-  if err
-    console.log "ERROR: shodanClient.count: " + err
-  else
-    console.log data
-
-shodanClient.host "1.1.1.1", (data, err) ->
-  if err
-    console.log "ERROR: shodanClient.host: " + err
-  else
-    console.log data
-```
-
 [**Full examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
 
 Developer guide
