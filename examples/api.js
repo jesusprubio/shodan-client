@@ -27,9 +27,6 @@ var ShodanClient = require('../lib/shodan.js'),
     searchOptions,
     countOptions;
 
-console.log('\n------------------- your key -------------------');
-console.log(shodanClient.getKey());
-
 
 // ---------------------- REST API ----------------------
 // https://developer.shodan.io/api

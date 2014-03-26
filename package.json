@@ -1,6 +1,6 @@
 {
 	"name" : "shodan-client",
-	"version" : "0.0.2",
+	"version" : "1.0.0",
 	"description" : "A Node.js library for accessing SHODAN API, https://developer.shodan.io/api",
     "author" : {
 		"name"  : "Jesus Perez <@jesusprubio>",
@@ -23,9 +23,9 @@
 	],
 	"homepage" : "https://github.com/jesusprubio/node-shodan-client",
 	"dependencies" : {
-		"request"    : "2.31.x",
-        "xml2js"     : "0.4.x",
-        "lodash"     : "2.4.x"
+		"request" : "2.31.x",
+        "xml2js"  : "0.4.x",
+        "lodash"  : "2.4.x"
     },
 	"engines" : {
 		"node" : "0.10.x"

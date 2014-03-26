@@ -24,9 +24,6 @@ var ShodanClient = require('../lib/shodan.js'),
     },
     shodanClient = new ShodanClient(options);
 
-console.log('\n------------------- your key -------------------');
-console.log(shodanClient.getKey());
-
 
 // ---------------------- STREAMING API ----------------------
 // https://developer.shodan.io/api/stream
