@@ -17,7 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 'use strict';
 
-var ShodanClient = require('../lib/shodan.js'),
+var util = require('util'),
+    
+    ShodanClient = require('../lib/shodan.js'),
     options      = {
         key     : 'YOURKEYHEREEEEEEEEEEEEEEE',
         timeout : 15000
@@ -29,31 +31,31 @@ var ShodanClient = require('../lib/shodan.js'),
 // https://developer.shodan.io/api/stream
 
 // ------------------- BANNERS -------------------
-shodanClient.streamBanners(function (data, err) {
+shodanClient.streamBanners(function (err, data) {
     console.log('\n------------------- streamBanners -------------------');
     if (err) {
         console.log('ERROR: shodanClient.streamBanners: ' + err);
     } else {
-        console.log(data);
+        console.log(util.inspect(data, { depth : 6 }));
     }
 });
 
 // ------------------- GEO -------------------
-shodanClient.streamGeo(function (data, err) {
+shodanClient.streamGeo(function (err, data) {
     console.log('\n------------------- streamGeo -------------------');
     if (err) {
         console.log('ERROR: shodanClient.streamGeo: ' + err);
     } else {
-        console.log(data);
+        console.log(util.inspect(data, { depth : 6 }));
     }
 });
 
 // ------------------- PORTS -------------------
-shodanClient.streamPorts('1434,27017,6379', function (data, err) {
+shodanClient.streamPorts('1434,27017,6379', function (err, data) {
     console.log('\n------------------- streamPorts -------------------');
     if (err) {
         console.log('ERROR: shodanClient.streamPorts: ' + err);
     } else {
-        console.log(data);
+        console.log(util.inspect(data, { depth : 6 }));
     }
 });
