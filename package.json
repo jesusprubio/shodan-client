@@ -1,34 +1,39 @@
 {
-	"name" : "shodan-client",
-	"version" : "1.0.2",
-	"description" : "A Node.js library for accessing SHODAN API, https://developer.shodan.io/api",
+    "name" : "shodan-client",
+    "version" : "1.0.3",
+    "description" : "A Node.js library for accessing SHODAN API, https://developer.shodan.io/api",
     "author" : {
-		"name"  : "Jesus Perez <@jesusprubio>",
-		"email" : "jesusprubio gmail com",
-		"url"   : "http://jesusprubio.name/"
-	},
-	"contributors" : [],
-	"main" : "./lib/shodan.js",
-	"repository" : {
-		"type" : "git",
-		"url"  : "https://github.com/jesusprubio/node-shodan-client/node-shodan-client.git"
-	},
-	"keywords" : [
-		"node",
-		"SHODAN",
-		"API",
-		"client",
-		"vulnerability",
-		"0day"
-	],
-	"homepage" : "https://github.com/jesusprubio/node-shodan-client",
-	"dependencies" : {
-		"request" : "2.31.x",
+        "name"  : "Jesus Perez <@jesusprubio>",
+        "email" : "jesusprubio gmail com",
+        "url"   : "http://jesusprubio.name/"
+    },
+    "contributors" : [],
+    "main" : "./lib/shodan.js",
+    "repository" : {
+        "type" : "git",
+        "url"  : "https://github.com/jesusprubio/node-shodan-client/node-shodan-client.git"
+    },
+    "keywords" : [
+        "node",
+        "SHODAN",
+        "API",
+        "client",
+        "vulnerability",
+        "0day"
+    ],
+    "homepage" : "https://github.com/jesusprubio/node-shodan-client",
+    "dependencies" : {
+        "request" : "2.51.x",
         "xml2js"  : "0.4.x",
         "lodash"  : "2.4.x"
     },
-	"engines" : {
-		"node" : "0.10.x"
-	},
-	"license" : "GPLv3"
+    "devDependencies": {
+        "grunt": "0.4.x",
+        "grunt-retire": "latest",
+        "grunt-nsp-package": "latest"
+    },
+    "engines" : {
+        "node" : "0.10.x"
+    },
+    "license" : "GPLv3"
 }
