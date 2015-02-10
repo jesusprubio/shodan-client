@@ -17,32 +17,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 'use strict';
 
+// https://developer.shodan.io/api
 var util = require('util'),
-    
-    ShodanClient = require('../lib/shodan.js'),
-    options      = {
-        key     : 'YOURKEYHEREEEEEEEEEEEEEEE',
-        timeout : 15000
+
+    ShodanClient = require('../'),
+    options = {
+        key: 'YOURKEYHEREEEEEEEEEEEEEEE',
+        timeout: 15000
     },
     shodanClient = new ShodanClient(options),
-    hostOptions,
     searchOptions,
-    countOptions;
+//    countOptions,
+    hostOptions;
 
 
-// ---------------------- REST API ----------------------
-// https://developer.shodan.io/api
-
-// ------------------- HOST (SHODAN methods) -------------------
 // minimal required parameters
-hostOptions = {
-    ip : '1.1.1.1'
-};
+hostOptions = { ip: '1.1.1.1' };
 
 // full supported params
 //hostOptions = {
-//    ip      : '1.1.1.1',
-//    history : true,    // default is false
+//    ip: '1.1.1.1',
+//    history: true,    // default is false
 //};
 
 //shodanClient.host(hostOptions, function (err, data) {
@@ -54,7 +49,6 @@ hostOptions = {
 //    }
 //});
 
-// ------------------- SEARCH (SHODAN methods) -------------------
 // minimal required parameters
 //searchOptions = {
 //    query: 'asterisk'
@@ -87,7 +81,6 @@ shodanClient.search(searchOptions,  function (err, data) {
     }
 });
 
-// ------------------- COUNT (SHODAN methods) -------------------
 // minimal required parameters
 //countOptions = {
 //    query: 'freepbx'
@@ -108,7 +101,6 @@ shodanClient.search(searchOptions,  function (err, data) {
 //    }
 //});
 //
-//// ------------------- RESOLVE (DNS methods) -------------------
 //shodanClient.resolve('google.com,bing.com', function (err, data) {
 //    console.log('\n------------------- resolve -------------------');
 //    if (err) {
@@ -118,7 +110,6 @@ shodanClient.search(searchOptions,  function (err, data) {
 //    }
 //});
 //
-//// ------------------- REVERSE (DNS methods) -------------------
 //shodanClient.reverse('74.125.227.230,204.79.197.200', function (err, data) {
 //    console.log('\n------------------- reverse -------------------');
 //    if (err) {
@@ -128,7 +119,6 @@ shodanClient.search(searchOptions,  function (err, data) {
 //    }
 //});
 //
-//// ------------------- MYIP (UTILITY methods) -------------------
 //shodanClient.myip(function (err, data) {
 //    console.log('\n------------------- myip -------------------');
 //    if (err) {

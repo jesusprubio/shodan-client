@@ -18,7 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 'use strict';
 
 var request     = require('request'),
-    util        = require('util'),
     parseString = require('xml2js').parseString;
 
 // It makes a SHODAN API request
@@ -31,7 +30,7 @@ exports.apiRequest = function (api, options, callback) {
             timeout : options.timeout
         },
         err;
-    
+
     console.log('URI: ' + config.uri);
     if (options.key) {
         request.get(config, function (error, response, body) {
@@ -41,8 +40,7 @@ exports.apiRequest = function (api, options, callback) {
                 } else {
                     callback(null, body);
                 }
-            }
-            else {
+            } else {
                 err = 'request.get: ' + error;
                 if (response && response.statusCode) {
                     err += ' (code: ' + response.statusCode + ')';
@@ -64,16 +62,15 @@ exports.rssRequest = function (url, timeout, callback) {
             timeout : timeout
         },
         err;
-    
+
     request.get(config, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             parseString(body, function (err, result) {
-                // Node uses util.inspect to convert the object into strings 
+                // Node uses util.inspect to convert the object into strings
                 // but it stops after depth=2 which (low for most XML)
                 callback(null, result);
             });
-        }
-        else {
+        } else {
             err = 'request.get: ' + error;
             if (response && response.statusCode) {
                 err += ' (code: ' + response.statusCode + ')';

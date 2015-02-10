@@ -17,28 +17,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 'use strict';
 
+var jsSources = ['Gruntfile.js', 'src/*.js', 'examples/*.js'];
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+
+    // Load all Grunt tasks at once
+    require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
 
-        pkg : grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON('package.json'),
 
-        retire : {
-            js      : ['Gruntfile.js', 'lib/*.js', 'examples/*.js'],
-            node    : ['./'],
-            options : {
-                verbose        : true,
-                packageOnly    : true,
-                jsRepository   : 'https://raw.github.com/bekk/retire.js/master/repository/jsrepository.json',
-                nodeRepository : 'https://raw.github.com/bekk/retire.js/master/repository/npmrepository.json'
-//                ignore         : 'documents,java'
+        jshint: {
+            all: jsSources,
+            options: {
+                jshintrc: true,
+                reporter: require('jshint-stylish')
+            }
+        },
+        jscs: {
+            src: jsSources,
+            options: {
+                config: '.jscsrc',
+                reporter: require('jscs-stylish').path
+            }
+        },
+
+        retire: {
+            js: jsSources,
+            node: ['./'],
+            options: {
+                verbose: true,
+                packageOnly: true,
+                jsRepository: 'https://raw.github.com/bekk/retire.js/master/repository/jsrepository.json',
+                nodeRepository: 'https://raw.github.com/bekk/retire.js/master/repository/npmrepository.json'
             }
         }
     });
 
-//    grunt.loadNpmTasks('grunt-nsp-package');
-
-    grunt.loadNpmTasks('grunt-retire');
+    // Aliases
+    grunt.task.registerTask('contribute', ['jshint', 'jscs']);
 
 };

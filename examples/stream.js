@@ -17,20 +17,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 'use strict';
 
+// https://developer.shodan.io/api/stream
+
 var util = require('util'),
-    
-    ShodanClient = require('../lib/shodan.js'),
-    options      = {
-        key     : 'YOURKEYHEREEEEEEEEEEEEEEE',
-        timeout : 15000
+
+    ShodanClient = require('../'),
+    options = {
+        key: 'YOURKEYHEREEEEEEEEEEEEEEE',
+        timeout: 15000
     },
     shodanClient = new ShodanClient(options);
 
 
-// ---------------------- STREAMING API ----------------------
-// https://developer.shodan.io/api/stream
-
-// ------------------- BANNERS -------------------
 shodanClient.streamBanners(function (err, data) {
     console.log('\n------------------- streamBanners -------------------');
     if (err) {
@@ -40,7 +38,6 @@ shodanClient.streamBanners(function (err, data) {
     }
 });
 
-// ------------------- GEO -------------------
 shodanClient.streamGeo(function (err, data) {
     console.log('\n------------------- streamGeo -------------------');
     if (err) {
@@ -50,7 +47,6 @@ shodanClient.streamGeo(function (err, data) {
     }
 });
 
-// ------------------- PORTS -------------------
 shodanClient.streamPorts('1434,27017,6379', function (err, data) {
     console.log('\n------------------- streamPorts -------------------');
     if (err) {
