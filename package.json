@@ -1,6 +1,6 @@
 {
   "name": "shodan-client",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A Node.js library for accessing SHODAN API, https://developer.shodan.io/api",
   "author": {
     "name": "Jesus Perez <@jesusprubio>",
@@ -37,7 +37,7 @@
     "load-grunt-tasks": "^3.1.0"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "0.12.x"
   },
   "license": "GPLv3"
 }
