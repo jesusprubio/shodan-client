@@ -31,12 +31,11 @@ exports.apiRequest = function (api, options, callback) {
         },
         err;
 
-    console.log('URI: ' + config.uri);
     if (options.key) {
         request.get(config, function (error, response, body) {
             if (!error && response.statusCode === 200) {
                 if (/maintenance/.exec(body)) {
-                    console.log('ERROR: SHODAN API is undergoing maintenance');
+                    callback('SHODAN API is undergoing maintenance');
                 } else {
                     callback(null, body);
                 }

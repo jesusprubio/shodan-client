@@ -1,6 +1,6 @@
 {
   "name": "shodan-client",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A Node.js library for accessing SHODAN API, https://developer.shodan.io/api",
   "author": {
     "name": "Jesus Perez <@jesusprubio>",
