@@ -1,14 +1,11 @@
 # Node-shodan-client
 A **[Node.js](http://nodejs.org/) (JavaScript) library for accessing the new [SHODAN API](https://developer.shodan.io/api)**. It includes all officially supported methods (REST, Streaming and Exploits APIs). Moreover two more were added, which allow to obtain the most popular search queries.
 
+## Install
+`npm i shodan-client`
+
 ## Use
-*NOTE: All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc). But popular ones can be reached through RSS so no key is needed.*
-
-This module has next dependencies (included in "package.json" file):
-
-- **[request](https://github.com/mikeal/request)**
-- **[xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)**
-- **[lodash](https://github.com/lodash/lodash)**
+All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc). But popular ones can be reached through RSS so no key is needed.
 
 ```javascript
 var ShodanClient = require('shodan-client'),
