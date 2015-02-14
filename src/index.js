@@ -45,7 +45,7 @@ ShodanClient.prototype.host = function (config, callback) {
         };
         utils.apiRequest('api', options, callback);
     } else {
-        callback('"ip" parameter is mandatory');
+        callback('ip parameter is mandatory');
     }
 };
 
@@ -70,7 +70,7 @@ ShodanClient.prototype.search = function (config, callback) {
         };
         utils.apiRequest('api', options, callback);
     } else {
-        callback('"query" parameter is mandatory');
+        callback('query parameter is mandatory');
     }
 };
 
@@ -90,7 +90,7 @@ ShodanClient.prototype.count = function (config, callback) {
         };
         utils.apiRequest('api', options, callback);
     } else {
-        callback('"query" parameter is mandatory');
+        callback('query parameter is mandatory');
     }
 };
 
@@ -110,7 +110,7 @@ ShodanClient.prototype.resolve = function (hostnames, callback) {
         };
         utils.apiRequest('api', options, callback);
     } else {
-        callback('"hostnames" parameter is mandatory');
+        callback('hostnames parameter is mandatory');
     }
 };
 
@@ -127,7 +127,7 @@ ShodanClient.prototype.reverse = function (ips, callback) {
         };
         utils.apiRequest('api', options, callback);
     } else {
-        callback('"ips" parameter is mandatory');
+        callback('ips parameter is mandatory');
     }
 };
 
@@ -190,7 +190,7 @@ ShodanClient.prototype.streamPorts = function (ports, callback) {
         };
         utils.apiRequest('stream', options, callback);
     } else {
-        callback('"ports" parameter is mandatory');
+        callback('ports parameter is mandatory');
     }
 };
 
@@ -219,7 +219,7 @@ ShodanClient.prototype.exploitSearch = function (config, callback) {
         };
         utils.apiRequest('exploits', options, callback);
     } else {
-        callback('"query" parameter is mandatory');
+        callback('query parameter is mandatory');
     }
 };
 
@@ -240,7 +240,7 @@ ShodanClient.prototype.exploitCount = function (config, callback) {
         };
         utils.apiRequest('exploits', options, callback);
     } else {
-        callback('"query" parameter is mandatory');
+        callback('query parameter is mandatory');
     }
 };
 
@@ -263,7 +263,7 @@ ShodanClient.prototype.popularTag = function (tag, callback) {
         finalUrl = popularUrlBase  + 'tag/' + tag + '?feed=1';
         utils.rssRequest(finalUrl, this.timeout, callback);
     } else {
-        callback('"tag" parameter is mandatory');
+        callback('tag parameter is mandatory');
     }
 };
 
