@@ -94,6 +94,18 @@ ShodanClient.prototype.count = function (config, callback) {
     }
 };
 
+ShodanClient.prototype.profile = function (callback) {
+    var partialQuery = '/account/profile?', options;
+
+    options = {
+        partialQuery: partialQuery,
+        key: this.key,
+        timeout: this.timeout
+    };
+
+    utils.apiRequest ('api',options,callback);
+};
+
 
 // DNS methods
 
