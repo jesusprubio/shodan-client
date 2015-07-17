@@ -17,11 +17,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 'use strict';
 
+var SIMULATION=false;
+
 var request     = require('request'),
     parseString = require('xml2js').parseString;
 
 // It makes a SHODAN API request
 exports.apiRequest = function (api, options, callback) {
+
     var baseUrl    = 'https://' + api + '.shodan.io',
         config     = {
             uri     : baseUrl + options.partialQuery + 'key=' + options.key,
@@ -31,25 +34,29 @@ exports.apiRequest = function (api, options, callback) {
         },
         err;
 
-    if (options.key) {
-        request.get(config, function (error, response, body) {
-            if (!error && response.statusCode === 200) {
-                if (/maintenance/.exec(body)) {
-                    callback('SHODAN API is undergoing maintenance');
-                } else {
-                    callback(null, body);
-                }
-            } else {
-                err = 'request.get: ' + error;
-                if (response && response.statusCode) {
-                    err += ' (code: ' + response.statusCode + ')';
-                }
-                callback(err);
-            }
-        });
+    if (SIMULATION==true) {
+        console.log ("SIMULATING HTTP CALL: " + JSON.stringify(config));
     } else {
-        callback('You must provide a valid API key');
-    }
+        if (options.key) {
+            request.get(config, function (error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    if (/maintenance/.exec(body)) {
+                        callback('SHODAN API is undergoing maintenance');
+                    } else {
+                        callback(null, body);
+                    }
+                } else {
+                    err = 'request.get: ' + error;
+                    if (response && response.statusCode) {
+                        err += ' (code: ' + response.statusCode + ')';
+                    }
+                callback(err);
+                }
+            });
+       } else {
+           callback('You must provide a valid API key');
+       }
+   }
 };
 
 // It makes an RSS request to get the popular feeds

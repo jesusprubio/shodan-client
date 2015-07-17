@@ -53,6 +53,16 @@ shodanClient.exploitSearch(searchOptionsExploits,  function (data, err) {
     }
 });
 
+
+shodanClient.profile(function (err,data) {
+    if (err) {
+        console.log ("ERROR: shodanClient.profile: " + err);
+    } else {
+        console.log ("Profile query success. You have " + data.credits + " query credits remaining.");
+    }
+});
+
+
 ```
 [**Full examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
 
