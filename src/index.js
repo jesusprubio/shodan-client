@@ -106,6 +106,19 @@ ShodanClient.prototype.profile = function (callback) {
     utils.apiRequest ('api',options,callback);
 };
 
+ShodanClient.prototype.apiinfo = function (callback) {
+    var partialQuery = '/api-info?';
+
+    var options = {
+        partialQuery: partialQuery,
+        key: this.key,
+        timeout: this.timeout,
+    };
+
+    utils.apiRequest('api', options, callback);
+};
+
+
 
 // DNS methods
 
