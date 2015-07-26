@@ -1,6 +1,6 @@
 /*
 
-Copyright (C) 2013, Jesus Perez <jesusprubio gmail com>
+Copyright 2013, Jesus Perez <jesusprubio gmail com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,56 +14,60 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 */
+
 'use strict';
 
 // https://developer.shodan.io/api
+
 var util = require('util'),
 
     ShodanClient = require('../'),
+
     options = {
-        key: 'YOURKEYHEREEEEEEEEEEEEEEE',
+        key: 'YOURKEYHERE',
         timeout: 15000
     },
     shodanClient = new ShodanClient(options),
     searchOptions,
-//    countOptions,
+    // countOptions,
     hostOptions;
 
 
-// minimal required parameters
+// Minimal required parameters
 hostOptions = { ip: '1.1.1.1' };
 
-// full supported params
-//hostOptions = {
-//    ip: '1.1.1.1',
-//    history: true,    // default is false
-//};
+// Full supported params
+// hostOptions = {
+//     ip: '1.1.1.1',
+//     history: true,    // default is false
+// };
 
-//shodanClient.host(hostOptions, function (err, data) {
-//    console.log('\n------------------- host -------------------');
-//    if (err) {
-//        console.log('ERROR: shodanClient.host: ' + err);
-//    } else {
-//        console.log(util.inspect(data, { depth : 6 }));
-//    }
-//});
+shodanClient.host(hostOptions, function (err, data) {
+    console.log('\n------------------- host -------------------');
+    if (err) {
+        console.log('ERROR: shodanClient.host: ' + err);
+    } else {
+        console.log(util.inspect(data, { depth : 6 }));
+    }
+});
 
-// minimal required parameters
-//searchOptions = {
-//    query: 'asterisk'
-//};
+// Minimal required parameters
+searchOptions = {
+    query: 'asterisk'
+};
 
-// full supported params
-//NOTE: API still fails with some of them
+// Full supported params
+// TODO: API still fails with some of them
 searchOptions = {
     query: 'asterisk',
-//    query: 'asterisk port:5060',
-//    query: encodeURIComponent('openssh port:22'),
-//    query: 'openssh+port%3A22',
-//    query: 'penssh%20port%3A22',
+    // query: 'asterisk port:5060',
+    // query: encodeURIComponent('openssh port:22'),
+    // query: 'openssh+port%3A22',
+    // query: 'penssh%20port%3A22',
     limit: 5,
-//    facets: 'port:100',
+    // facets: 'port:100',
     minify: false
 };
 
@@ -81,49 +85,49 @@ shodanClient.search(searchOptions,  function (err, data) {
     }
 });
 
-// minimal required parameters
-//countOptions = {
-//    query: 'freepbx'
-//};
+// Minimal required parameters
+// countOptions = {
+//     query: 'freepbx'
+// };
 
-// full supported params
-//countOptions = {
-//    query: 'freepbx',
-//    facets: 'port:100'
-//};
-//
-//shodanClient.count(countOptions,  function (err, data) {
-//    console.log('\n------------------- count -------------------');
-//    if (err) {
-//        console.log('ERROR: shodanClient.count: ' + err);
-//    } else {
-//        console.log(util.inspect(data, { depth : 6 }));
-//    }
-//});
-//
-//shodanClient.resolve('google.com,bing.com', function (err, data) {
-//    console.log('\n------------------- resolve -------------------');
-//    if (err) {
-//        console.log('ERROR: shodanClient.resolve: ' + err);
-//    } else {
-//        console.log(util.inspect(data, { depth : 6 }));
-//    }
-//});
-//
-//shodanClient.reverse('74.125.227.230,204.79.197.200', function (err, data) {
-//    console.log('\n------------------- reverse -------------------');
-//    if (err) {
-//        console.log('ERROR: shodanClient.reverse: ' + err);
-//    } else {
-//        console.log(util.inspect(data, { depth : 6 }));
-//    }
-//});
-//
-//shodanClient.myip(function (err, data) {
-//    console.log('\n------------------- myip -------------------');
-//    if (err) {
-//        console.log('ERROR: shodanClient.myip: ' + err);
-//    } else {
-//        console.log(util.inspect(data, { depth : 6 }));
-//    }
-//});
+// Full supported params
+// countOptions = {
+//     query: 'freepbx',
+//     facets: 'port:100'
+// };
+
+// shodanClient.count(countOptions,  function (err, data) {
+//     console.log('\n------------------- count -------------------');
+//     if (err) {
+//         console.log('ERROR: shodanClient.count: ' + err);
+//     } else {
+//         console.log(util.inspect(data, { depth : 6 }));
+//     }
+// });
+
+shodanClient.resolve('google.com,bing.com', function (err, data) {
+    console.log('\n------------------- resolve -------------------');
+    if (err) {
+        console.log('ERROR: shodanClient.resolve: ' + err);
+    } else {
+        console.log(util.inspect(data, { depth : 6 }));
+    }
+});
+
+shodanClient.reverse('74.125.227.230,204.79.197.200', function (err, data) {
+    console.log('\n------------------- reverse -------------------');
+    if (err) {
+        console.log('ERROR: shodanClient.reverse: ' + err);
+    } else {
+        console.log(util.inspect(data, { depth : 6 }));
+    }
+});
+
+shodanClient.myip(function (err, data) {
+    console.log('\n------------------- myip -------------------');
+    if (err) {
+        console.log('ERROR: shodanClient.myip: ' + err);
+    } else {
+        console.log(util.inspect(data, { depth : 6 }));
+    }
+});

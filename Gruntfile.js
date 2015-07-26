@@ -1,4 +1,5 @@
 /*
+
 Copyright Jesus Perez <jesusprubio gmail com>
 
 This program is free software: you can redistribute it and/or modify
@@ -13,11 +14,13 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 
 'use strict';
 
-var jsSources = ['Gruntfile.js', 'src/*.js', 'examples/*.js'];
+var JS_SOURCES = ['Gruntfile.js', 'src/*.js', 'examples/*.js'];
+
 
 module.exports = function (grunt) {
 
@@ -29,22 +32,20 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         jshint: {
-            all: jsSources,
+            all: JS_SOURCES,
             options: {
-                jshintrc: true,
-                reporter: require('jshint-stylish')
+                jshintrc: true
             }
         },
         jscs: {
-            src: jsSources,
+            src: JS_SOURCES,
             options: {
-                config: '.jscsrc',
-                reporter: require('jscs-stylish').path
+                config: '.jscsrc'
             }
         },
 
         retire: {
-            js: jsSources,
+            js: JS_SOURCES,
             node: ['./'],
             options: {
                 verbose: true,

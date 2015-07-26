@@ -14,18 +14,30 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 */
+
 'use strict';
 
 // https://developer.shodan.io/api
+
 var lodash = require('lodash'),
 
-    utils  = require('./utils');
+    utils  = require('./utils'),
+
+    POPULAR_URL = 'http://www.shodanhq.com/browse/popular/feed',
+    POPULAR_URL_BASE = 'http://www.shodanhq.com/browse/';
+
+
+// Constructor
 
 function ShodanClient(options) {
     this.key = options.key || null;
     this.timeout = options.timeout || 10000;
 }
+
+
+// Public methods
 
 // SHODAN methods
 
@@ -95,25 +107,23 @@ ShodanClient.prototype.count = function (config, callback) {
 };
 
 ShodanClient.prototype.profile = function (callback) {
-    var partialQuery = '/account/profile?', options;
+    var partialQuery = '/account/profile?',
+        options = {
+            partialQuery: partialQuery,
+            key: this.key,
+            timeout: this.timeout
+        };
 
-    options = {
-        partialQuery: partialQuery,
-        key: this.key,
-        timeout: this.timeout
-    };
-
-    utils.apiRequest ('api',options,callback);
+    utils.apiRequest ('api', options, callback);
 };
 
 ShodanClient.prototype.apiinfo = function (callback) {
-    var partialQuery = '/api-info?';
-
-    var options = {
-        partialQuery: partialQuery,
-        key: this.key,
-        timeout: this.timeout,
-    };
+    var partialQuery = '/api-info?',
+        options = {
+            partialQuery: partialQuery,
+            key: this.key,
+            timeout: this.timeout
+        };
 
     utils.apiRequest('api', options, callback);
 };
@@ -275,18 +285,16 @@ ShodanClient.prototype.exploitCount = function (config, callback) {
 // http://www.shodanhq.com/browse
 
 ShodanClient.prototype.popular = function (callback) {
-    var popularUrl = 'http://www.shodanhq.com/browse/popular/feed';
-
-    utils.rssRequest(popularUrl, this.timeout, callback);
+    utils.rssRequest(POPULAR_URL, this.timeout, callback);
 };
 
 ShodanClient.prototype.popularTag = function (tag, callback) {
-    var popularUrlBase = 'http://www.shodanhq.com/browse/',
-        finalUrl;
-
     if (tag) {
-        finalUrl = popularUrlBase  + 'tag/' + tag + '?feed=1';
-        utils.rssRequest(finalUrl, this.timeout, callback);
+        utils.rssRequest(
+            POPULAR_URL_BASE  + 'tag/' + tag + '?feed=1',
+            this.timeout,
+            callback
+        );
     } else {
         callback('tag parameter is mandatory');
     }

@@ -1,16 +1,13 @@
-# Node-shodan-client
-A **[Node.js](http://nodejs.org/) (JavaScript) library for accessing the new [SHODAN API](https://developer.shodan.io/api)**. It includes all officially supported methods (REST, Streaming and Exploits APIs). Moreover two more were added, which allow to obtain the most popular search queries.
-
-## Install
-`npm i shodan-client`
+# node-shodan-client
+A Node ([node.js™](http://nodejs.org/) / [io.js](https://iojs.org/en/index.html)) library for accessing the new [SHODAN API](https://developer.shodan.io/api)**. It includes all officially supported methods (REST, Streaming and Exploits APIs). Moreover two more were added, which allow to obtain the most popular search queries.
 
 ## Use
 All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc). But popular ones can be reached through RSS so no key is needed.
 
 ```javascript
 var ShodanClient = require('shodan-client'),
-    options      = {
-        key : 'YOURKEYHERE!!!!!!!!!!!!!!!!!!!!!!!!!',
+    options = {
+        key: 'YOURKEYHERE',
     },
     shodanClient = new ShodanClient(options),
     searchOptions = {
@@ -53,7 +50,6 @@ shodanClient.exploitSearch(searchOptionsExploits,  function (data, err) {
     }
 });
 
-
 shodanClient.profile(function (err,data) {
     if (err) {
         console.log ("ERROR: shodanClient.profile: " + err);
@@ -61,7 +57,6 @@ shodanClient.profile(function (err,data) {
         console.log ("Profile query success. You have " + data.credits + " query credits remaining.");
     }
 });
-
 
 ```
 [**Full examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
@@ -71,9 +66,6 @@ shodanClient.profile(function (err,data) {
 - Conventions:
  - We use [JSHint](http://jshint.com/) and [Crockford's Styleguide](http://javascript.crockford.com/code.html).
  - Please run `grunt contribute` to be sure your code fits with them.
-
-## TODO
-- [https://github.com/jesusprubio/node-shodan-client/issues](https://github.com/jesusprubio/node-shodan-client/issues)
 
 ## License
 This program is free software: you can redistribute it and/or modify

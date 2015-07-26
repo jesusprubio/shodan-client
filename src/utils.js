@@ -14,28 +14,30 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 */
+
 'use strict';
 
-var SIMULATION=false;
+var request = require('request'),
+    parseString = require('xml2js').parseString,
 
-var request     = require('request'),
-    parseString = require('xml2js').parseString;
+    SIMULATION = false;
 
-// It makes a SHODAN API request
+
+// It makes a request to the API
 exports.apiRequest = function (api, options, callback) {
-
-    var baseUrl    = 'https://' + api + '.shodan.io',
-        config     = {
-            uri     : baseUrl + options.partialQuery + 'key=' + options.key,
-            method  : 'GET',
-            json    : true,
-            timeout : options.timeout
+    var baseUrl = 'https://' + api + '.shodan.io',
+        config = {
+            uri: baseUrl + options.partialQuery + 'key=' + options.key,
+            method: 'GET',
+            json: true,
+            timeout: options.timeout
         },
         err;
 
-    if (SIMULATION==true) {
-        console.log ("SIMULATING HTTP CALL: " + JSON.stringify(config));
+    if (SIMULATION) {
+        console.log ("Simulating an HTTP call: " + JSON.stringify(config));
     } else {
         if (options.key) {
             request.get(config, function (error, response, body) {
@@ -50,22 +52,22 @@ exports.apiRequest = function (api, options, callback) {
                     if (response && response.statusCode) {
                         err += ' (code: ' + response.statusCode + ')';
                     }
-                callback(err);
+                    callback(err);
                 }
             });
-       } else {
-           callback('You must provide a valid API key');
-       }
-   }
+        } else {
+            callback('You must provide a valid API key');
+        }
+    }
 };
 
 // It makes an RSS request to get the popular feeds
 exports.rssRequest = function (url, timeout, callback) {
     var config = {
-            uri     : url,
-            method  : 'GET',
-            json    : false,
-            timeout : timeout
+            uri: url,
+            method: 'GET',
+            json: false,
+            timeout: timeout
         },
         err;
 

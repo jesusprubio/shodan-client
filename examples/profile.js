@@ -14,24 +14,23 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 */
+
 'use strict';
 
-var util = require('util'),
-    ShodanClient = require('../'),
+var ShodanClient = require('../'),
     options = {
         timeout: 10000,
-	key: 'YOURKEYGOESHEREEEEEEEEEEEEEEEEEE'
+        key: 'YOURKEYHERE'
     },
     shodanClient = new ShodanClient(options);
 
 
-    shodanClient.profile(function (err,data) {
-        if (err) {
-            console.log ("ERROR: shodanClient.profile: " + err);
-        } else {
-            console.log ("Profile query success. You have " + data.credits + " query credits remaining.");
-        }
-    });
-
-
+shodanClient.profile(function (err, data) {
+    if (err) {
+        console.log ("ERROR: shodanClient.profile: " + err);
+    } else {
+        console.log ("Profile query success. You have " + data.credits + " query credits remaining.");
+    }
+});
