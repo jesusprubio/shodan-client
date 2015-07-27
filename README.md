@@ -1,6 +1,8 @@
 # node-shodan-client
 A Node ([node.js™](http://nodejs.org/) / [io.js](https://iojs.org/en/index.html)) library for accessing the new [SHODAN API](https://developer.shodan.io/api)**. It includes all officially supported methods (REST, Streaming and Exploits APIs). Moreover two more were added, which allow to obtain the most popular search queries.
 
+![Demo](https://raw.githubusercontent.com/jesusprubio/node-shodan-client/master/artifacts/demo.gif)
+
 ## Use
 All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc). But popular ones can be reached through RSS so no key is needed.
 

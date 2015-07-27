@@ -1,0 +1,14 @@
+# Logs and databases
+*.log
+
+# Demo video
+artifacts
+
+# OS files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
