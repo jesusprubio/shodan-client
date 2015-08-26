@@ -24,7 +24,7 @@ var lodash = require('lodash'),
 
 function ShodanClient(options) {
     this.key = options.key || null;
-    this.timeout = options.timeout || 10000;
+    this.timeout = options.timeout || 20000;
 }
 
 // SHODAN methods
@@ -60,6 +60,8 @@ ShodanClient.prototype.search = function (config, callback) {
             // Drop not valid params
             if (optional.indexOf(key) !== -1) {
                 partialQuery += key + '=' + value + '&';
+            } else {
+	       console.log("WARNING: node-shodan dropping unknown search option " + key);
             }
         });
 
