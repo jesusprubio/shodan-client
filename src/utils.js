@@ -34,7 +34,7 @@ exports.apiRequest = function (api, options, callback) {
             json: true,
             timeout: options.timeout
         },
-        err;
+        err={};
 
     if (SIMULATION) {
         console.log ("Simulating an HTTP call: " + JSON.stringify(config));
@@ -48,9 +48,15 @@ exports.apiRequest = function (api, options, callback) {
                         callback(null, body);
                     }
                 } else {
-                    err = 'request.get: ' + error;
+                    err = {
+                        method:'get',
+                        error:error,
+                    };
+
                     if (response && response.statusCode) {
-                        err += ' (code: ' + response.statusCode + ')';
+                        err.code=response.statusCode;
+                        err.response=response;
+                        err.body=body;
                     }
                     callback(err);
                 }
