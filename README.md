@@ -19,7 +19,7 @@ var ShodanClient = require('shodan-client'),
         minify: false
     };
 
-shodanClient.search(searchOptions,  function (data, err) {
+shodanClient.search(searchOptions,  function (err, data) {
     console.log('\n------------------- search -------------------');
     if (err) {
         console.log('ERROR: shodanClient.search: ' + err);
@@ -28,7 +28,7 @@ shodanClient.search(searchOptions,  function (data, err) {
     }
 });
 
-shodanClient.streamBanners(function (data, err) {
+shodanClient.streamBanners(function (err, data) {
     console.log('\n------------------- streamBanners -------------------');
     if (err) {
         console.log('ERROR: shodanClient.streamBanners: ' + err);
@@ -43,7 +43,7 @@ var searchOptionsExploits = {
     page: 1
 };
 
-shodanClient.exploitSearch(searchOptionsExploits,  function (data, err) {
+shodanClient.exploitSearch(searchOptionsExploits,  function (err, data) {
     console.log('\n------------------- exploitSearch -------------------');
     if (err) {
         console.log('ERROR: shodanClient.exploitSearch: ' + err);
