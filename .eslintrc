@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb/base",
+
+  "//": "We reset this rule set by the style guide,",
+  "///": "They use Babel and it adds use strict automatically.",
+  "rules": {
+    "strict": 0,
+    "no-console": 0
+  }
+}
