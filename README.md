@@ -64,12 +64,14 @@ shodanClient.profile(function (err,data) {
 [**Full examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
 
 ## Developer guide
+
 - Use [GitHub pull requests](https://help.github.com/articles/using-pull-requests).
 - Conventions:
- - We use [JSHint](http://jshint.com/) and [Crockford's Styleguide](http://javascript.crockford.com/code.html).
- - Please run `grunt contribute` to be sure your code fits with them.
+ - We use [ESLint](http://eslint.org/) and [Airbnb](https://github.com/airbnb/javascript) style guide.
+ - Please run `gulp lint` to be sure your code fits with it.
 
 ## License
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
