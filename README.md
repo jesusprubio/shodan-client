@@ -34,7 +34,7 @@ client.search(searchOpts, (err, data) => {
 });
 ```
 
-- [**Examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/example)
+- [**More examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/example)
 - [**Full API documentation**](./doc/api.md).
 
 
