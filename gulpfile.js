@@ -14,34 +14,34 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 'use strict';
 
 
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
-const tape = require('gulp-tape');
-const tapColorize = require('tap-colorize');
+// const tape = require('gulp-tape');
+// const tapColorize = require('tap-colorize');
 const nsp = require('gulp-nsp');
 
 
 // Lint all our files using ESlint.
 gulp.task('lint', () => {
-  return gulp.src(['index.js', 'gulpfile.js', 'src/*.js', 'examples/*.js'])
-    // Attaches the lint output to the eslint property of the file object,
-    // so it can be used by other modules.
+  return gulp.src(['index.js', 'gulpfile.js', 'example/*.js', 'lib/*.js', 'test/*.js'])
     .pipe(eslint())
     // Print to console.
     .pipe(eslint.format());
 });
 
 
+// TODO:
 // Run the tests.
-gulp.task('test', () => {
-  return gulp.src('test/**/*.js')
-    .pipe(tape({
-      reporter: tapColorize(),
-    }));
-});
+// gulp.task('test', () => {
+//   return gulp.src('test/**/*.js')
+//     .pipe(tape({
+//       reporter: tapColorize(),
+//     }));
+// });
 
 
 // To check for know vunerabilities in dependencies.
@@ -50,4 +50,5 @@ gulp.task('nsp', (cb) => {
 });
 
 
-gulp.task('travis', gulp.series('nsp', 'test'));
+// TODO: Add "test" task here
+gulp.task('travis', gulp.series('lint', 'nsp'));

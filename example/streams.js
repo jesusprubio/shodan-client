@@ -1,6 +1,6 @@
 /*
 
-Copyright (C) 2015, Brad Hein
+Copyright 2013, Jesus Perez <jesusprubio gmail com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,18 +19,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 'use strict';
 
-var ShodanClient = require('../'),
-    options = {
-        timeout: 10000,
-        key: 'YOURKEYHERE'
-    },
-    shodanClient = new ShodanClient(options);
+// http://developer.shodan.io/api/stream
+
+const util = require('./util');
+
+const ShodanClient = require('../');
 
 
-shodanClient.profile(function (err, data) {
-    if (err) {
-        console.log ("ERROR: shodanClient.profile: " + err);
-    } else {
-        console.log ("Profile query success. You have " + data.credits + " query credits remaining.");
-    }
+const client = new ShodanClient({
+  key: 'YOURKEYHERE',
+  timeout: 10000,
 });
+
+
+// search
+
+client.Streams.banners((err, data) => { util.printRes(err, data, 'banners'); });
+
+
+// count
+
+// const portsOpts = { ports: '1434,27017,6379' };
+
+// client.Streams.ports(portsOpts, (err, data) => { util.printRes(err, data, 'ports'); });

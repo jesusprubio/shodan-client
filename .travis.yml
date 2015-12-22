@@ -1,0 +1,12 @@
+language: node_js
+
+node_js:
+  - "5.1"
+  - "4.2"
+
+sudo: false
+
+before_script:
+  - npm install -g gulpjs/gulp#4.0
+
+script: gulp travis

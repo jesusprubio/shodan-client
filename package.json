@@ -27,16 +27,18 @@
   "homepage": "https://github.com/jesusprubio/node-shodan-client",
   "dependencies": {
     "lodash": "^3.10.1",
-    "request": "^2.67.0",
-    "xml2js": "^0.4.15"
+    "request": "^2.67.0"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta6",
     "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^2.0.0",
+    "eslint-config-airbnb": "^2.1.1",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-eslint": "^1.1.1",
-    "gulp-nsp": "^2.2.1"
+    "gulp-nsp": "^2.2.1",
+    "gulp-tape": "0.0.7",
+    "tap-colorize": "^1.2.0",
+    "tape": "^4.2.2"
   },
   "engines": {
     "node": ">=0.4.0",

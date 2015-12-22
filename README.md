@@ -1,67 +1,42 @@
 # node-shodan-client
-A Node ([node.js™](http://nodejs.org/) / [io.js](https://iojs.org/en/index.html)) library for accessing the new [SHODAN API](https://developer.shodan.io/api)**. It includes all officially supported methods (REST, Streaming and Exploits APIs). Moreover two more were added, which allow to obtain the most popular search queries.
+
+![Travis-ci status](https://api.travis-ci.org/jesusprubio/node-shodan-client.svg)
+
+A [Node.js](https://nodejs.org) library for accessing the new [Shodan API](https://developer.shodan.io/api).
 
 ![Demo](https://raw.githubusercontent.com/jesusprubio/node-shodan-client/master/artifacts/demo.gif)
 
+
 ## Use
-All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc). But popular ones can be reached through RSS so no key is needed.
+
+All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc).
 
 ```javascript
-var ShodanClient = require('shodan-client'),
-    options = {
-        key: 'YOURKEYHERE',
-    },
-    shodanClient = new ShodanClient(options),
-    searchOptions = {
-        query: 'asterisk',
-        limit: 5,
-        facets: 'port:100',
-        minify: false
-    };
+const ShodanClient = require('shodan-client');
 
-shodanClient.search(searchOptions,  function (err, data) {
-    console.log('\n------------------- search -------------------');
-    if (err) {
-        console.log('ERROR: shodanClient.search: ' + err);
-    } else {
-        console.log(data);
-    }
-});
+const options = { key: 'YOURKEYHERE' };
+const client = new ShodanClient(options);
 
-shodanClient.streamBanners(function (err, data) {
-    console.log('\n------------------- streamBanners -------------------');
-    if (err) {
-        console.log('ERROR: shodanClient.streamBanners: ' + err);
-    } else {
-        console.log(data);
-    }
-});
-
-var searchOptionsExploits = {
-    query: 'asterisk',
-    facets: 'port:100',
-    page: 1
+const searchOptions = {
+  query: 'asterisk',
+  limit: 5,
+  facets: 'port:100',
+  minify: false
 };
 
-shodanClient.exploitSearch(searchOptionsExploits,  function (err, data) {
-    console.log('\n------------------- exploitSearch -------------------');
-    if (err) {
-        console.log('ERROR: shodanClient.exploitSearch: ' + err);
-    } else {
-        console.log(data);
-    }
+client.search(searchOptions, (err, data) => {
+  if (err) {
+      console.log('Error:');
+      console.log(err);
+  } else {
+      console.log(data);
+  }
 });
-
-shodanClient.profile(function (err,data) {
-    if (err) {
-        console.log ("ERROR: shodanClient.profile: " + err);
-    } else {
-        console.log ("Profile query success. You have " + data.credits + " query credits remaining.");
-    }
-});
-
 ```
-[**Full examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/examples)
+
+- [**Examples**](https://github.com/jesusprubio/node-shodan-client/tree/master/example)
+- [**Full API documentation**](./doc/api.md).
+
 
 ## Developer guide
 
@@ -69,6 +44,7 @@ shodanClient.profile(function (err,data) {
 - Conventions:
  - We use [ESLint](http://eslint.org/) and [Airbnb](https://github.com/airbnb/javascript) style guide.
  - Please run `gulp lint` to be sure your code fits with it.
+
 
 ## License
 
