@@ -17,14 +17,14 @@ const ShodanClient = require('shodan-client');
 const options = { key: 'YOURKEYHERE' };
 const client = new ShodanClient(options);
 
-const searchOptions = {
+const searchOpts = {
   query: 'asterisk',
   limit: 5,
   facets: 'port:100',
   minify: false
 };
 
-client.search(searchOptions, (err, data) => {
+client.search(searchOpts, (err, data) => {
   if (err) {
       console.log('Error:');
       console.log(err);

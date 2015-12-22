@@ -1,7 +1,7 @@
 # API
 
 The constructor is returned. It accepts an options object with next properties:
-- `key` - Your SHODAN API key.
+- `key` - Your Shodan API key.
 - `timeout` - Connection timeout in ms. (default: 5000)
 
 Both are public, so you can change them when you want. The object includes the next methods and some other classes to group all API supported requests: "Exploits" and "Streams". They're automatically instantiated when the main one is.
@@ -18,7 +18,7 @@ They support the requests documented here: https://developer.shodan.io/api.
 
 Returns all services that have been found on the given host IP. Supported options:
 
-NOTE: All methods drop silently all not supported options.
+NOTE: All methods drop silently all not supported ones.
 
 - `ip` (string) -  Host IP address.
 
