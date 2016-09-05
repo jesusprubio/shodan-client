@@ -1,6 +1,6 @@
 {
   "name": "shodan-client",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A library for accessing SHODAN API, https://developer.shodan.io/api",
   "author": {
     "name": "Jesus Perez <@jesusprubio>",
@@ -28,7 +28,7 @@
     "request": "^2.74.0",
     "request-promise-native": "^1.0.3"
   },
-  "devDependencies" : {
+  "devDependencies": {
     "depcheck": "^0.6.4",
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^5.0.1",
