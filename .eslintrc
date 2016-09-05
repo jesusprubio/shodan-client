@@ -1,14 +1,13 @@
 {
-  "extends": "airbnb/base",
+  "extends": "airbnb-base",
 
-  "/": "We reset this rules set by the style guide,",
-  "//": "They use Babel and it adds use strict automatically.",
-  "///": "In our case we don't need a logger, so we want to use console.log.",
-  "////": "The rest are for non-contemplated cases.",
+  "//": "They use Babel and it adds 'use strict' automatically.",
 
   "rules": {
-    "strict": 0,
-    "no-console": 0,
-    "max-len": [1, 100, 4]
-  }
+    "max-len": [1, 100, 4],
+    "strict": [0],
+    "import/no-extraneous-dependencies": [0]
+  },
+
+  "plugins": ["json"]
 }

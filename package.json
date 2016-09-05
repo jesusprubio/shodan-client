@@ -10,10 +10,9 @@
   "contributors": [
     "https://github.com/jesusprubio/shodan-client.js/graphs/contributors"
   ],
-  "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jesusprubio/node-shodan-client/shodan-client.js.git"
+    "url": "https://github.com/jesusprubio/shodan-client.js/shodan-client.js.git"
   },
   "keywords": [
     "node",
@@ -26,21 +25,29 @@
   ],
   "dependencies": {
     "lodash": "^3.10.1",
-    "request": "^2.67.0"
+    "request": "^2.74.0",
+    "request-promise-native": "^1.0.3"
   },
-  "devDependencies": {
-    "babel-eslint": "^5.0.0-beta6",
-    "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^2.1.1",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-eslint": "^1.1.1",
-    "gulp-nsp": "^2.2.1",
-    "gulp-tape": "0.0.7",
-    "tap-colorize": "^1.2.0",
-    "tape": "^4.2.2"
+  "devDependencies" : {
+    "depcheck": "^0.6.4",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb-base": "^5.0.1",
+    "eslint-plugin-import": "^1.10.0",
+    "eslint-plugin-json": "^1.2.0",
+    "npm-check-updates": "^2.8.0",
+    "nsp": "^2.6.1",
+    "release-it": "^2.4.3"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "dep-ok": "depcheck",
+    "dep-sec": "nsp check",
+    "dep-old": "ncu",
+    "cont-int": "npm run lint && npm run dep-ok && npm run dep-sec",
+    "release": "npm run cont-int && release-it"
   },
   "engines": {
-    "node": ">=0.4.0",
+    "node": "6.x.x",
     "npm": "3.x.x"
   },
   "license": "GPL-3.0"
