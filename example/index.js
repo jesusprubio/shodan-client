@@ -26,7 +26,7 @@ const client = require('../');
 const shodanKey = 'YOURKEYHERE';
 
 
-client.hosts('1.1.1.1', shodanKey)
+client.host('1.1.1.1', shodanKey)
 .then(res => {
   console.log('Result:');
   console.log(util.inspect(res, { depth: 6 }));
