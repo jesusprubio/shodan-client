@@ -33,6 +33,7 @@ client.search('asterisk port:5061', 'YOURKEYHERE', searchOpts)
 
 
 ## API
+
 The content of the result is the same provided by the API. You can check them in the [API documentation](https://developer.shodan.io).
 
 Different errors are thrown. Promises are also rejected with errors.
