@@ -9,3 +9,4 @@ output
 Icon?
 ehthumbs.db
 Thumbs.db
+*.lock
