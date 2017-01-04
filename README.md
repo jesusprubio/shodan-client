@@ -1,6 +1,6 @@
 # shodan-client.js
 
-![Travis-ci status](https://travis-ci.org/jesusprubio/shodan-client.js.svg)
+[![Build Status](https://travis-ci.org/jesusprubio/shodan-client.js.svg?branch=master)](https://travis-ci.org/jesusprubio/shodan-client.js)
 
 A [Node.js](https://nodejs.org) library for accessing the new [Shodan API](https://developer.shodan.io/api).
 
