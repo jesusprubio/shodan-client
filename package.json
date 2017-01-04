@@ -47,8 +47,8 @@
     "release": "npm run cont-int && release-it"
   },
   "engines": {
-    "node": "6.x.x",
-    "npm": "3.x.x"
+    "node": ">=6",
+    "npm": ">=3"
   },
   "license": "GPL-3.0"
 }
