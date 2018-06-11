@@ -7,7 +7,6 @@
 
 'use strict';
 
-
 // Main object, to wrap everything.
 
 // Root methods.
@@ -16,6 +15,5 @@ const client = require('./lib/index');
 // Grouped methods.
 client.streams = require('./lib/streams');
 client.exploits = require('./lib/exploits');
-
 
 module.exports = client;
