@@ -36,13 +36,13 @@ You can find more examples in the [tests](test).
 
 :penguin: QISKit is released under the [Apache license, v2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Do you want to help?
+## Contributing
 
 :sunglasses: If you'd like to help please take a look to this [contribution guidelines](https://github.com/QISKit/qiskit-js/blob/master/CONTRIBUTING.md).
 
 ## API
 
-:eyes: The content of the result is the same provided by the API. You can check them in the [API documentation](https://developer.shodan.io).
+:eyes: The content of the result is the same provided by the HTTP API. You can check them in the [API documentation](https://developer.shodan.io).
 
 ### `async host(ip, key, opts)`
 
@@ -203,7 +203,7 @@ Information of the actual APi version.
 
 ### Streams
 
-From here requests documented here: https://developer.shodan.io/api/stream.
+From here requests documented [here](https://developer.shodan.io/api/stream).
 
 #### `async streams.banners(key, opts)`
 
@@ -242,7 +242,7 @@ Only returns banner data for the list of specified hosts. This stream provides a
 
 ### Exploits
 
-From here requests documented here: https://developer.shodan.io/api/exploits/rest.
+From here requests documented [here](https://developer.shodan.io/api/exploits/rest).
 
 #### `async exploits.search(query, key, opts)`
 
