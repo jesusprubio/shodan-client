@@ -44,7 +44,7 @@ You can find more examples in the [tests](test).
 
 :eyes: The content of the result is the same provided by the API. You can check them in the [API documentation](https://developer.shodan.io).
 
-### `host(ip, key, opts) -> Promise`
+### `async host(ip, key, opts)`
 
 Returns all services that have been found on the given host IP. Supported options:
 
@@ -55,7 +55,7 @@ Returns all services that have been found on the given host IP. Supported option
   - `minify` (boolean, optional) - True to only return the list of ports and the general host information, no banners. (default: false)
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `search(query, key, opts) -> Promise`
+### `async search(query, key, opts)`
 
 Search Shodan using the same query syntax as the website and use facets to get summary information for different properties. This method may use API query credits depending on usage, please check the [API documentation](https://developer.shodan.io/api#shodan-host-search).
 
@@ -67,7 +67,7 @@ Search Shodan using the same query syntax as the website and use facets to get s
   - `minify` (boolean, optional) - Whether or not to truncate some of the larger fields (default: true)
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `count(query, key, opts) -> Promise`
+### `async count(query, key, opts)`
 
 This method behaves identical to "search" with the only difference that this method does not return any host results, it only returns the total number of results that matched the query and any facet information that was requested. As a result this method does not consume query credits.
 
@@ -77,7 +77,7 @@ This method behaves identical to "search" with the only difference that this met
   - `facets` (string, optional) - A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. "country:100" to get the top 100 countries for a search query). To see which filters are supported please check the API documentation. (default: null)
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `searchTokens(query, key, opts) -> Promise`
+### `async searchTokens(query, key, opts)`
 
 Search Shodan using the same query syntax as the website and use facets to get summary information for different properties. This method may use API query credits depending on usage, please check the [API documentation](https://developer.shodan.io/api#shodan-host-search-tokens).
 
@@ -86,7 +86,7 @@ Search Shodan using the same query syntax as the website and use facets to get s
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `ports(key, opts)`
+### `async ports(key, opts)`
 
 This method returns a list of port numbers that the crawlers are looking for.
 
@@ -94,7 +94,7 @@ This method returns a list of port numbers that the crawlers are looking for.
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `protocols(key, opts)`
+### `async protocols(key, opts)`
 
 This method returns an object containing all the protocols that can be used when launching an Internet scan.
 
@@ -102,7 +102,7 @@ This method returns an object containing all the protocols that can be used when
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `scan(ips, key, opts) -> Promise`
+### `async scan(ips, key, opts)`
 
 Use this method to request Shodan to crawl a network. This method uses API scan credits, please check the [API documentation](https://developer.shodan.io/api#shodan-scan).
 
@@ -111,7 +111,7 @@ Use this method to request Shodan to crawl a network. This method uses API scan 
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `scanInternet(port, protocol, key, opts) -> Promise`
+### `async scanInternet(port, protocol, key, opts)`
 
 Use this method to request Shodan to crawl the Internet for a specific port. This method is restricted to security researchers and companies with a Shodan Data license, please check the [API documentation for more details.
 
@@ -121,7 +121,7 @@ Use this method to request Shodan to crawl the Internet for a specific port. Thi
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `services(key, opts) -> Promise`
+### `async services(key, opts)`
 
 This method returns an object containing all the services that the Shodan crawlers look at. It can also be used as a quick and practical way to resolve a port number to the name of a service.
 
@@ -129,7 +129,7 @@ This method returns an object containing all the services that the Shodan crawle
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `query(key, opts) -> Promise`
+### `async query(key, opts)`
 
 To obtain a list of search queries that users have saved.
 
@@ -140,7 +140,7 @@ To obtain a list of search queries that users have saved.
   - `sort` (string, optional) - Sort the list based on a property. Possible values are: "votes", "timestamp". (default: false)
   - `order` (string, optional) - Whether to sort the list in ascending or descending order. Possible values are: "asc", "desc". (default: "desc")
 
-### `querySearch(query, key, opts) -> Promise`
+### `async querySearch(query, key, opts)`
 
 To search the directory of search queries that users have saved.
 
@@ -150,7 +150,7 @@ To search the directory of search queries that users have saved.
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
   - `page` (number, optional) - Page number to iterate over results; each page contains 10 items. (default: 1)
 
-### `queryTags(key, opts) -> Promise`
+### `async queryTags(key, opts)`
 
 To obtain a list of popular tags for the saved search queries.
 
@@ -159,7 +159,7 @@ To obtain a list of popular tags for the saved search queries.
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
   - `size` (number, optional) - The number of tags to return. (default: 10)
 
-### `accountProfile(key, opts) -> Promise`
+### `async accountProfile(key, opts)`
 
 Returns information about the account linked to this API key.
 
@@ -167,7 +167,7 @@ Returns information about the account linked to this API key.
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `dnsResolve(hostnames, key, opts) -> Promise`
+### `async dnsResolve(hostnames, key, opts)`
 
 Look up the IP address for the provided list of hostnames.
 
@@ -176,7 +176,7 @@ Look up the IP address for the provided list of hostnames.
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `dnsReverse(ips, key, opts) -> Promise`
+### `async dnsReverse(ips, key, opts)`
 
 Look up the hostnames that have been defined for the given list of IP addresses.
 
@@ -185,7 +185,7 @@ Look up the hostnames that have been defined for the given list of IP addresses.
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `toolsMyip(key, opts) -> Promise`
+### `async toolsMyip(key, opts)`
 
 Get your external IP address.
 
@@ -193,7 +193,7 @@ Get your external IP address.
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `apiInfo(key, opts) -> Promise`
+### `async apiInfo(key, opts)`
 
 Information of the actual APi version.
 
@@ -201,11 +201,11 @@ Information of the actual APi version.
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### streams
+### Streams
 
 From here requests documented here: https://developer.shodan.io/api/stream.
 
-### `streams.banners(key, opts) -> Promise`
+#### `async streams.banners(key, opts)`
 
 This stream provides ALL collected data. Use this stream if you need access to everything and/ or want to store your own Shodan database locally. If you only care about specific ports, please use the Ports stream.
 
@@ -213,7 +213,7 @@ This stream provides ALL collected data. Use this stream if you need access to e
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `streams.asn(asn, key, opts) -> Promise`
+#### `async streams.asn(asn, key, opts)`
 
 This stream provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in devices located in certain ASNs.
 
@@ -222,7 +222,7 @@ This stream provides a filtered, bandwidth-saving view of the Banners stream in 
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `streams.countries(countries, key, opts) -> Promise`
+#### `async streams.countries(countries, key, opts)`
 
 This stream provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in devices located in certain countries.
 
@@ -231,7 +231,7 @@ This stream provides a filtered, bandwidth-saving view of the Banners stream in 
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### `streams.ports(ports, key, opts) -> Promise`
+#### `async streams.ports(ports, key, opts)`
 
 Only returns banner data for the list of specified hosts. This stream provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in a specific list of ports.
 
@@ -240,11 +240,11 @@ Only returns banner data for the list of specified hosts. This stream provides a
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### exploits
+### Exploits
 
 From here requests documented here: https://developer.shodan.io/api/exploits/rest.
 
-### `exploits.search(query, key, opts) -> Promise`
+#### `async exploits.search(query, key, opts)`
 
 Search across a variety of data sources for exploits and use facets to get summary information.
 
@@ -255,7 +255,7 @@ Search across a variety of data sources for exploits and use facets to get summa
   - `facets` (string, optional) - A comma-separated list of properties to get summary information on. To see which filters are supported please check the API documentation. (default: null)
   - `page` (number, optional): The page number to page through results 100 at a time (default: 1)
 
-### `exploits.count(query, key, opts) -> Promise`
+### `async exploits.count(query, key, opts)`
 
 This method behaves identical to the "/search" method with the difference that it doesn't return any results.
 
