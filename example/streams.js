@@ -15,16 +15,16 @@ const client = require('../');
 
 const shodanKey = 'YOURKEYHERE';
 
-
-client.streams.banners(shodanKey)
-.then(res => {
-  console.log('Result:');
-  console.log(util.inspect(res, { depth: 6 }));
-})
-.catch(err => {
-  console.log('Error:');
-  console.log(err);
-});
+client.streams
+  .banners(shodanKey)
+  .then(res => {
+    console.log('Result:');
+    console.log(util.inspect(res, { depth: 6 }));
+  })
+  .catch(err => {
+    console.log('Error:');
+    console.log(err);
+  });
 
 // client.streams.asn('3303,32475', shodanKey)
 // .then(res => {

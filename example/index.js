@@ -15,16 +15,16 @@ const client = require('../');
 
 const shodanKey = 'YOURKEYHERE';
 
-
-client.host('1.1.1.1', shodanKey)
-.then(res => {
-  console.log('Result:');
-  console.log(util.inspect(res, { depth: 6 }));
-})
-.catch(err => {
-  console.log('Error:');
-  console.log(err);
-});
+client
+  .host('1.1.1.1', shodanKey)
+  .then(res => {
+    console.log('Result:');
+    console.log(util.inspect(res, { depth: 6 }));
+  })
+  .catch(err => {
+    console.log('Error:');
+    console.log(err);
+  });
 
 // const searchOpts = {
 //   facets: 'port:100,country:100',
