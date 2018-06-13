@@ -20,6 +20,7 @@
     "client"
   ],
   "dependencies": {
+    "debug": "^3.1.0",
     "lodash": "^4.17.10",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5"
@@ -31,6 +32,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-json": "^1.2.0",
     "husky": "^0.14.3",
+    "mocha": "^5.2.0",
     "prettier": "^1.13.5",
     "pretty-quick": "^1.6.0",
     "release-it": "^7.4.7"
@@ -41,7 +43,8 @@
     "format": "prettier --write '**/*.js'",
     "precommit": "pretty-quick --staged",
     "pretest": "npm run lint && npm run dep-ok",
-    "release": "npm test && release-it"
+    "release": "npm test && release-it",
+    "test": "mocha --recursive --timeout 8000 test"
   },
   "engines": {
     "node": ">=8"
