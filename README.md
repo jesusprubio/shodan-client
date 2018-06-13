@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.org/jesusprubio/shodan-client.js.svg?branch=master)](https://travis-ci.org/jesusprubio/shodan-client.js)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 A [Node.js](https://nodejs.org) library for accessing the new [Shodan API](https://developer.shodan.io/api).
 
@@ -34,15 +35,27 @@ You can find more examples in the [tests](test).
 
 ## License
 
-:penguin: QISKit is released under the [Apache license, v2.0](https://www.apache.org/licenses/LICENSE-2.0).
+:penguin: QISKit is released under the [MIT license](LICENSE).
 
 ## Contributing
 
-:sunglasses: If you'd like to help please take a look to this [contribution guidelines](https://github.com/QISKit/qiskit-js/blob/master/CONTRIBUTING.md).
+:sunglasses: If you'd like to help please take a look to [this file](.github/CONTRIBUTING.md).
+
+### Tests
+
+To run the tests please pass your API key in the next way:
+
+```sh
+KEY_TEST=YOURKEYHERE npm test
+```
 
 ## API
 
 :eyes: The content of the result is the same provided by the HTTP API. You can check them in the [API documentation](https://developer.shodan.io).
+
+### `version`
+
+Library version.
 
 ### `async host(ip, key, opts)`
 
@@ -257,10 +270,11 @@ Search across a variety of data sources for exploits and use facets to get summa
 
 ### `async exploits.count(query, key, opts)`
 
-This method behaves identical to the "/search" method with the difference that it doesn't return any results.
+This is similar to the last one but it doesn't return any exploit data, only the total count.
 
-- `query` (string) - Search query used to search the database of known exploits. To see which filters are supported please check the API documentation.
-- `key` (string) - SHODAN API key.
-- `opts`, an object with:
-  - `timeout` (number) - Connection timeout in ms. (default: 5000)
-  - `facets` (string, optional) - A comma-separated list of properties to get summary information on. To see which filters are supported please check the API documentation. (default: null)
+- `query`
+- `key`
+- `opts`
+
+  - `timeout`
+  - `facets`
