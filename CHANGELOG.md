@@ -1,0 +1,116 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+> **Tags:**
+>
+> - 🎉 Added
+> - ✏️ Changed
+> - ⚠️ Deprecated
+> - ❌ Removed
+> - 🐛 Fixed
+> - 👾 Security
+
+## [Unreleased]
+
+## [3.1.0] - 2018-06-14
+
+### 🎉 Added
+
+- Prettier support.
+- Async/await support.
+- Initial test suite.
+
+### ✏️ Changed
+
+- Travis setup updated to use the last node.js stable version.
+- More love to the README.
+- Good practices in the codebase.
+
+### 👾 Security
+
+- Dependencies updated.
+
+### 🐛 Fixed
+
+- Minor problems found after implement the tests.
+
+## [3.0.2] - 2017-01-04
+
+### 🐛 Fixed
+
+- Travis badge link in the README.
+- Format for the Node/npm expected version.
+
+### \* ❌ Removed
+
+- Yarn support, we'll stick to npm from now.
+
+## [3.0.1] - 2016-09-14
+
+### 🐛 Fixed
+
+- Important typo, in an public method name!.
+
+## [3.0.0] - 2016-09-05
+
+### 🎉 Added
+
+- CI: Travis support.
+
+### ✏️ Changed
+
+- Major refactor to use (and expose) promises.
+
+### 🐛 Fixed
+
+- Minor typos.
+- Minor URL updates in the package.json.
+
+## [2.0.0] - 2015-12-22
+
+### ✏️ Changed
+
+- New v2, breaking changes to support all new methods consistenly.
+
+### 🐛 Fixed
+
+- Minor typos.
+
+## [1.1.0] - 2015-12-13
+
+### 🎉 Added
+
+- First stable version.
+- Node v12 support.
+- New methods:
+  - query
+  - apiInfo
+- Allow testing without network connection.
+
+### ✏️ Changed
+
+- Refactor to respect the new API.
+- Some love to the README.
+- Increased timeout past 10s because shodan often responds after 10s.
+- Folder structure improved.
+
+### 🐛 Fixed
+
+- Some problems with error handling.
+
+### 👾 Security
+
+- Avoiding to print the key.
+
+[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.3...HEAD
+[3.1.0]: https://github.com/IBMResearch/jlocke/compare/3.0.3...3.1.3
+[3.0.3]: https://github.com/IBMResearch/jlocke/compare/3.0.2...3.0.3
+[3.0.2]: https://github.com/IBMResearch/jlocke/compare/3.0.1...3.0.2
+[3.0.1]: https://github.com/IBMResearch/jlocke/compare/3.0.0...3.0.1
+[3.0.0]: https://github.com/IBMResearch/jlocke/compare/2.0.0...3.0.0
+[2.0.0]: https://github.com/IBMResearch/jlocke/compare/1.1.0...2.0.0
+[1.1.0]: https://github.com/IBMResearch/jlocke/compare/0c75dafa5646bd47346981ae307686784adfa002...1.1.0
