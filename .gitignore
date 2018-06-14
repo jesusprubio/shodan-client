@@ -10,3 +10,4 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *.lock
+package-lock.json
