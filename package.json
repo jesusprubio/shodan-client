@@ -40,7 +40,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "dep-ok": "depcheck --ignores=release-it,husky",
+    "dep-ok": "depcheck --ignores=release-it,husky,prettier,pretty-quick",
     "format": "prettier --write '**/*.js'",
     "precommit": "pretty-quick --staged",
     "pretest": "npm run lint && npm run dep-ok",
