@@ -29,18 +29,20 @@ describe('host', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should fail if the HTTP request fails', async () =>
+  it('should fail if the HTTP request fails', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.host('8.8.8.8', 'a'),
       /request.get : 40/,
-    ));
+    );
+  });
 
   it('should return data for an active host', async function t() {
     if (!shodanKey) {
       this.skip();
     }
     // The HTTP API fails a lot randomly.
-    this.retries(5);
+    utilsTest.insist(this);
 
     const res = await client.host('8.8.8.8', shodanKey);
 
@@ -89,7 +91,8 @@ describe('host', () => {
     assert.equal(res.data[0].isp, 'Google');
   });
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.host('8.8.8.8', 'a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,

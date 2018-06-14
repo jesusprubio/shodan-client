@@ -26,10 +26,13 @@ describe('apiInfo', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should fail if the HTTP request fails', async () =>
-    utilsTest.throwsAsync(() => client.apiInfo('a'), /request.get : 40/));
+  it('should fail if the HTTP request fails', async function t() {
+    utilsTest.insist(this);
+    utilsTest.throwsAsync(() => client.apiInfo('a'), /request.get : 40/);
+  });
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.apiInfo('a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,
@@ -40,7 +43,7 @@ describe('apiInfo', () => {
     if (!shodanKey) {
       this.skip();
     }
-    this.retries(5);
+    utilsTest.insist(this);
 
     const res = await client.apiInfo(shodanKey);
 

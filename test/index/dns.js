@@ -33,13 +33,16 @@ describe('dnsResolve', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should fail if the HTTP request fails', async () =>
+  it('should fail if the HTTP request fails', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsResolve('ibm.com,google.com', 'a'),
       /request.get : 40/,
-    ));
+    );
+  });
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsResolve('ibm.com,google.com', 'a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,
@@ -50,7 +53,7 @@ describe('dnsResolve', () => {
     if (!shodanKey) {
       this.skip();
     }
-    this.retries(5);
+    utilsTest.insist(this);
 
     const res = await client.dnsResolve('ibm.com,google.com', shodanKey);
     assert.deepEqual(Object.keys(res), ['google.com', 'ibm.com']);
@@ -71,13 +74,16 @@ describe('dnsReverse', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should fail if the HTTP request fails', async () =>
+  it('should fail if the HTTP request fails', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsReverse('8.8.8.8,9.9.9.9', 'a'),
       /request.get : 40/,
-    ));
+    );
+  });
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsReverse('8.8.8.8,9.9.9.9', 'a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,
@@ -88,7 +94,7 @@ describe('dnsReverse', () => {
     if (!shodanKey) {
       this.skip();
     }
-    this.retries(5);
+    utilsTest.insist(this);
 
     const res = await client.dnsReverse('8.8.8.8,9.9.9.9', shodanKey);
 

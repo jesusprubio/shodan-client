@@ -36,13 +36,16 @@ describe('scanInternet', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should fail if the HTTP request fails', async () =>
+  it('should fail if the HTTP request fails', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.scanInternet(5065, 'sip', 'a'),
       /request.post : 40/,
-    ));
+    );
+  });
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.scanInternet(5065, 'sip', 'a', { timeout: 1 }),
       /request.post : Error: ETIMEDOUT/,
@@ -53,7 +56,7 @@ describe('scanInternet', () => {
     if (!shodanKey) {
       this.skip();
     }
-    this.retries(5);
+    utilsTest.insist(this);
 
     utilsTest.throwsAsync(
       () => client.scan('8.8.8.8', 'a', { timeout: 1 }),

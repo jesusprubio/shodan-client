@@ -34,7 +34,8 @@ describe('streams:banner', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.banners('a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,
@@ -55,7 +56,8 @@ describe('streams:asn', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.asn('a', 'a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,
@@ -76,7 +78,8 @@ describe('streams:countries', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.countries('a', 'a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,
@@ -97,7 +100,8 @@ describe('streams:ports', () => {
       /You must provide a valid API key/,
     ));
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.ports('a', 'a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,

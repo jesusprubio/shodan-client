@@ -10,6 +10,7 @@
 'use strict';
 
 const assert = require('assert');
+const sleep = require('system-sleep');
 
 // A custom version of [assert.throws](https://nodejs.org/api/assert.html#
 // assert_assert_throws_block_error_message) with async (through promises) support.
@@ -34,4 +35,10 @@ module.exports.throwsAsync = async (block, errorRexp) => {
   }
 
   assert.fail('Missing expected exception');
+};
+
+// The HTTP API fails a lot randomly.
+module.exports.insist = context => {
+  context.retries(3);
+  sleep(3000);
 };

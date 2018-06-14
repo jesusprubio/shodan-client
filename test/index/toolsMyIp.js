@@ -28,10 +28,13 @@ describe('toolsMyip', () => {
     ));
 
   // skip: This method is public.
-  it.skip('should fail if the HTTP request fails', async () =>
-    utilsTest.throwsAsync(() => client.toolsMyip('a'), /request.get : 40/));
+  it.skip('should fail if the HTTP request fails', async function t() {
+    utilsTest.insist(this);
+    utilsTest.throwsAsync(() => client.toolsMyip('a'), /request.get : 40/);
+  });
 
-  it('should have into account the "timeout" option', async () => {
+  it('should have into account the "timeout" option', async function t() {
+    utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.toolsMyip('a', { timeout: 1 }),
       /request.get : Error: ETIMEDOUT/,
@@ -42,7 +45,7 @@ describe('toolsMyip', () => {
     if (!shodanKey) {
       this.skip();
     }
-    this.retries(5);
+    utilsTest.insist(this);
 
     assert.ok(net.isIP(await client.toolsMyip('shodanKey')));
   });

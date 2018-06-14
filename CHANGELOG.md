@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### 🐛 Fixed
+
+- Trick in tests to avoid a block and API random errors.
+
 ## [3.1.0] - 2018-06-14
 
 ### 🎉 Added
@@ -53,7 +57,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### 🐛 Fixed
 
-- Important typo, in an public method name!.
+- Important typo, in an public method name!
 
 ## [3.0.0] - 2016-09-05
 
