@@ -14,6 +14,7 @@ A [Node.js](https://nodejs.org) library for accessing the new [Shodan API](https
 :pencil: All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc).
 
 ```javascript
+const util  = require('util');
 const client = require('shodan-client');
 
 const searchOpts = {
@@ -21,7 +22,7 @@ const searchOpts = {
   // minify: false,
 };
 client
-  .search('asterisk port:5061', 'YOURKEYHERE', searchOpts)
+  .search('asterisk port:5060', 'YOURKEYHERE', searchOpts)
   .then(res => {
     console.log('Result:');
     console.log(util.inspect(res, { depth: 6 }));
