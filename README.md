@@ -37,7 +37,7 @@ You can find more examples in the [tests](test).
 
 ## License
 
-:penguin: QISKit is released under the [MIT license](LICENSE).
+:penguin: This library is released under the [MIT license](LICENSE).
 
 ## Contributing
 
