@@ -94,7 +94,7 @@ describe('streams:ports', () => {
       /Required parameter: ports/,
     ));
 
-  it('should fail if "ports" parameter no present', async () =>
+  it('should fail if "key" parameter no present', async () =>
     utilsTest.throwsAsync(
       () => client.streams.ports('a'),
       /You must provide a valid API key/,
