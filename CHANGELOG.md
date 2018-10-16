@@ -113,8 +113,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Avoiding to print the key.
 
-[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.3...HEAD
-[3.1.0]: https://github.com/IBMResearch/jlocke/compare/3.0.3...3.1.3
+[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.1...HEAD
+[3.1.1]: https://github.com/IBMResearch/jlocke/compare/3.1.0...3.1.1
+[3.1.0]: https://github.com/IBMResearch/jlocke/compare/3.0.3...3.1.0
 [3.0.3]: https://github.com/IBMResearch/jlocke/compare/3.0.2...3.0.3
 [3.0.2]: https://github.com/IBMResearch/jlocke/compare/3.0.1...3.0.2
 [3.0.1]: https://github.com/IBMResearch/jlocke/compare/3.0.0...3.0.1
