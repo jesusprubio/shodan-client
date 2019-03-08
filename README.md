@@ -5,9 +5,16 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-A [Node.js](https://nodejs.org) library for accessing the new [Shodan API](https://developer.shodan.io/api).
+A node.js library for accessing the new [Shodan API](https://developer.shodan.io/api).
 
-![Demo](https://raw.githubusercontent.com/jesusprubio/shodan-client.js/master/artifacts/demo.gif)
+<div align="center">
+	<p>
+    <img src="https://raw.githubusercontent.com/jesusprubio/shodan-client.js/master/artifacts/demo.gif" alt="demo">
+	</p>
+	<p>
+		<sub>:gift: If you like this project you could follow me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a> or send me <a href="https://buymeacoff.ee/jesusprubio"><code>some</code></a> <a href="https://buymeacoff.ee/jesusprubio"><code>love</code></a></sub>
+	</p>
+</div>
 
 ## Use
 
