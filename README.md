@@ -12,7 +12,7 @@ A node.js library for accessing the new [Shodan API](https://developer.shodan.io
     <img src="https://raw.githubusercontent.com/jesusprubio/shodan-client.js/master/artifacts/demo.gif" alt="demo">
 	</p>
 	<p>
-		<sub>:gift: Follow me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a> if you enjoy this project</sub>
+		<sub>:gift: Follow me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a> if you like this project</sub>
 	</p>
 </div>
 
