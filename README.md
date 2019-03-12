@@ -12,7 +12,7 @@
     <img src="https://raw.githubusercontent.com/jesusprubio/shodan-client/master/artifacts/demo.gif" alt="demo">
 	</p>
 	<p>
-		<sub>:gift: Follow me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a> if you like this project</sub>
+		<sub>:gift: Ping me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a> if you like this project</sub>
 	</p>
 </div>
 
