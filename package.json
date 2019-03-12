@@ -51,13 +51,14 @@
     "system-sleep": "^1.3.6"
   },
   "scripts": {
-    "lint": "eslint .",
-    "dep-ok": "depcheck --ignores=release-it,husky,prettier,pretty-quick",
     "format": "prettier --write '**/*.js'",
-    "precommit": "pretty-quick --staged",
-    "pretest": "npm run lint && npm run dep-ok",
-    "release": "npm test && release-it",
-    "test": "ny mocha --recursive --timeout 8000 test"
+    "lint": "eslint .",
+    "precommit": "lint-staged",
+    "deps": "depcheck --ignores=eslint-config-airbnb-base,eslint-config-prettier,eslint-plugin-import,eslint-plugin-json,lint-staged,np,prettier",
+    "audit": "audit-ci --moderate",
+    "pretest": "npm run audit && npm run deps && npm run lint",
+    "test": "ny mocha --recursive --timeout 8000 test",
+    "release": "np"
   },
   "engines": {
     "node": ">=10"
