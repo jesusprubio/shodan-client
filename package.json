@@ -57,7 +57,7 @@
     "deps": "depcheck --ignores=eslint-config-airbnb-base,eslint-config-prettier,eslint-plugin-import,eslint-plugin-json,lint-staged,np,prettier",
     "audit": "audit-ci --moderate",
     "pretest": "npm run audit && npm run deps && npm run lint",
-    "test": "ny mocha --recursive --timeout 8000 test",
+    "test": "nyc mocha --recursive --timeout 8000 test",
     "release": "np"
   },
   "engines": {
