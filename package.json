@@ -59,6 +59,6 @@
     "test": "ny mocha --recursive --timeout 8000 test"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   }
 }
