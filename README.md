@@ -1,7 +1,7 @@
 # Shodan client for JavaScript
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/jesusprubio/shodan-client.js.svg?branch=master)](https://travis-ci.org/jesusprubio/shodan-client.js)
+[![Build Status](https://travis-ci.org/jesusprubio/shodan-client.svg?branch=master)](https://travis-ci.org/jesusprubio/shodan-client)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
@@ -9,7 +9,7 @@ A Node.js library for accessing the new [Shodan API](https://developer.shodan.io
 
 <div align="center">
 	<p>
-    <img src="https://raw.githubusercontent.com/jesusprubio/shodan-client.js/master/artifacts/demo.gif" alt="demo">
+    <img src="https://raw.githubusercontent.com/jesusprubio/shodan-client/master/artifacts/demo.gif" alt="demo">
 	</p>
 	<p>
 		<sub>:gift: Follow me on <a href="https://twitter.com/jesusprubio"><code>Twitter</code></a> if you like this project</sub>

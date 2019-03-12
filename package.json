@@ -4,11 +4,11 @@
   "description": "A library for accessing SHODAN API, https://developer.shodan.io/api",
   "author": "Jesus Perez <jesusprubio@@member.fsf.org>",
   "contributors": [
-    "https://github.com/jesusprubio/shodan-client.js/graphs/contributors"
+    "https://github.com/jesusprubio/shodan-client/graphs/contributors"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jesusprubio/shodan-client.js/shodan-client.js.git"
+    "url": "https://github.com/jesusprubio/shodan-client/shodan-client.git"
   },
   "keywords": [
     "node",
