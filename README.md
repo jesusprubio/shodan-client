@@ -1,4 +1,4 @@
-# Shodan client for JavaScript
+# Shodan client
 
 [![Build Status](https://travis-ci.org/jesusprubio/shodan-client.svg?branch=master)](https://travis-ci.org/jesusprubio/shodan-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
