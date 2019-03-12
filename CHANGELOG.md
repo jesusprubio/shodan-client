@@ -16,6 +16,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.1.2] - 2018-10-16
+
+### ✏️ Changed
+
+- Improving tooling.
+- Node.js and dependencies update.
+
 ## [3.1.1] - 2018-10-16
 
 ### 🐛 Fixed
@@ -113,7 +120,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Avoiding to print the key.
 
-[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.1...HEAD
+[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.2...HEAD
+[3.1.2]: https://github.com/IBMResearch/jlocke/compare/3.1.1...3.1.2
 [3.1.1]: https://github.com/IBMResearch/jlocke/compare/3.1.0...3.1.1
 [3.1.0]: https://github.com/IBMResearch/jlocke/compare/3.0.3...3.1.0
 [3.0.3]: https://github.com/IBMResearch/jlocke/compare/3.0.2...3.0.3
