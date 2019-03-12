@@ -12,7 +12,7 @@
     "client"
   ],
   "bugs": {
-    "url" : "https://github.com/jesusprubio/shodan-client/issues"
+    "url": "https://github.com/jesusprubio/shodan-client/issues"
   },
   "license": "MIT",
   "author": {
@@ -20,7 +20,8 @@
     "url": "http://jesusprubio.name"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "lib"
   ],
   "contributors": [
     "https://github.com/jesusprubio/shodan-client/graphs/contributors"
@@ -46,7 +47,7 @@
     "np": "^4.0.2",
     "nyc": "^13.3.0",
     "mocha": "^5.2.0",
-    "prettier": "^1.13.5",
+    "prettier": "^1.16.4",
     "system-sleep": "^1.3.6"
   },
   "scripts": {
@@ -60,5 +61,32 @@
   },
   "engines": {
     "node": ">=10"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "es6": true,
+      "node": true,
+      "browser": true
+    },
+    "rules": {
+      "strict": [
+        "off"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
