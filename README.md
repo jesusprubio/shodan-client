@@ -5,7 +5,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-A Node.js/JavaScript library for accessing the new [Shodan API](https://developer.shodan.io/api).
+:eyes: A Node.js/JavaScript library for accessing the new [Shodan API](https://developer.shodan.io/api).
 
 <div align="center">
 	<p>

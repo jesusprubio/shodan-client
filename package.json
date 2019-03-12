@@ -1,8 +1,27 @@
 {
   "name": "shodan-client",
   "version": "3.1.1",
-  "description": "A library for accessing SHODAN API, https://developer.shodan.io/api",
-  "author": "Jesus Perez <jesusprubio@@member.fsf.org>",
+  "description": "👀 A Node.js/JavaScript library for accessing the new Shodan API",
+  "keywords": [
+    "node",
+    "Shodan",
+    "API",
+    "client",
+    "vulnerability",
+    "0day",
+    "client"
+  ],
+  "bugs": {
+    "url" : "https://github.com/jesusprubio/shodan-client/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jesus Rubio",
+    "url": "http://jesusprubio.name"
+  },
+  "files": [
+    "index.js"
+  ],
   "contributors": [
     "https://github.com/jesusprubio/shodan-client/graphs/contributors"
   ],
@@ -10,32 +29,24 @@
     "type": "git",
     "url": "https://github.com/jesusprubio/shodan-client/shodan-client.git"
   },
-  "keywords": [
-    "node",
-    "SHODAN",
-    "API",
-    "client",
-    "vulnerability",
-    "0day",
-    "client"
-  ],
   "dependencies": {
-    "debug": "^3.1.0",
-    "lodash": "^4.17.10",
-    "request": "^2.87.0",
-    "request-promise-native": "^1.0.5"
+    "debug": "^4.1.1",
+    "lodash": "^4.17.11",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
-    "depcheck": "^0.6.4",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-json": "^1.2.0",
-    "husky": "^0.14.3",
+    "audit-ci": "^1.4.1",
+    "depcheck": "^0.7.2",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "lint-staged": "^8.1.5",
+    "np": "^4.0.2",
+    "nyc": "^13.3.0",
     "mocha": "^5.2.0",
     "prettier": "^1.13.5",
-    "pretty-quick": "^1.6.0",
-    "release-it": "^7.4.7",
     "system-sleep": "^1.3.6"
   },
   "scripts": {
@@ -45,10 +56,9 @@
     "precommit": "pretty-quick --staged",
     "pretest": "npm run lint && npm run dep-ok",
     "release": "npm test && release-it",
-    "test": "mocha --recursive --timeout 8000 test"
+    "test": "ny mocha --recursive --timeout 8000 test"
   },
   "engines": {
     "node": ">=8"
-  },
-  "license": "MIT"
+  }
 }
