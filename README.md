@@ -1,7 +1,6 @@
 # Shodan client
 
 [![Build Status](https://travis-ci.org/jesusprubio/shodan-client.svg?branch=master)](https://travis-ci.org/jesusprubio/shodan-client)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Downloads](https://img.shields.io/npm/dm/shodan-client.svg)](https://npmjs.com/shodan-client)
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
