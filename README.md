@@ -4,7 +4,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Downloads](https://img.shields.io/npm/dm/shodan-client.svg)](https://npmjs.com/shodan-client)
-[![Install size](https://packagephobia.now.sh/badge?p=shodan-client)](https://packagephobia.now.sh/result?p=shodan-client)
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
 :eyes: Node.js/JavaScript library for accessing the new [Shodan API](https://developer.shodan.io/api).
