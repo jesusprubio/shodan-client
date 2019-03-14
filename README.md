@@ -16,6 +16,14 @@
 	</p>
 </div>
 
+## Install
+
+:coffee: Install last [Node.js](https://nodejs.org/download) stable version (or LTS) and then:
+
+```sh
+npm i -g shodan-client
+```
+
 ## Use
 
 :pencil: All methods of the API need a valid key, you can get one [here](http://www.shodanhq.com/api_doc).
