@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.1.4] - 2019-03-29
+
+### ❌ Removed
+
+- Debugging stuff.
+
 ### 👾 Security
 
 - Vulnerable dev dependencies updated.
@@ -69,7 +75,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Travis badge link in the README.
 - Format for the Node/npm expected version.
 
-### \* ❌ Removed
+### ❌ Removed
 
 - Yarn support, we'll stick to npm from now.
 
@@ -130,7 +136,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Avoiding to print the key.
 
-[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.3...HEAD
+[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.4...HEAD
+[3.1.4]: https://github.com/IBMResearch/jlocke/compare/3.1.3...3.1.4
 [3.1.3]: https://github.com/IBMResearch/jlocke/compare/3.1.2...3.1.3
 [3.1.2]: https://github.com/IBMResearch/jlocke/compare/3.1.1...3.1.2
 [3.1.1]: https://github.com/IBMResearch/jlocke/compare/3.1.0...3.1.1
