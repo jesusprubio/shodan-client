@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/npm/dm/shodan-client.svg)](https://npmjs.com/shodan-client)
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
-:eyes: Node.js/JavaScript library for accessing the new [Shodan API](https://developer.shodan.io/api).
+:eyes: Library for accessing the new [Shodan API](https://developer.shodan.io/api).
 
 <div align="center">
 	<p>
@@ -18,7 +18,7 @@
 
 ## Install
 
-:coffee: Install lastest [Node.js](https://nodejs.org/download) stable version (or LTS) and then:
+:coffee: Install latest [Node.js](https://nodejs.org/download) stable version (or LTS) and then:
 
 ```sh
 npm i -g shodan-client
@@ -49,10 +49,6 @@ client
 ```
 
 You can find more examples in the [tests](test).
-
-## License
-
-:penguin: This library is released under the [MIT license](LICENSE).
 
 ## Contributing
 
