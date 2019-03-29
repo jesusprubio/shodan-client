@@ -16,9 +16,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### 👾 Security
+
+- Vulnerable dev dependencies updated.
+
 ## [3.1.3] - 2019-03-12
 
-### 🐛 Fixed 
+### 🐛 Fixed
 
 - Problem with `minify` option.
 
