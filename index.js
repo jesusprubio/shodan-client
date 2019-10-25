@@ -1,5 +1,5 @@
 /*
-  Copyright Jesús Pérez <jesusprubio@member.fsf.org>
+  Copyright Jesús Rubio <jesusprubio@gmail.com>
 
   This code may only be used under the MIT license found at
   https://opensource.org/licenses/MIT.
