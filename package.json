@@ -41,7 +41,7 @@
     "depcheck": "^0.8.3",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
     "lint-staged": "^9.4.2",
     "mocha": "^6.2.2",
