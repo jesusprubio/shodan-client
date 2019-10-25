@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/npm/dm/shodan-client.svg)](https://npmjs.com/shodan-client)
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
-:eyes: Library for accessing the new [Shodan API](https://developer.shodan.io/api).
+:eyes: Library for accessing the [Shodan API](https://developer.shodan.io/api).
 
 <div align="center">
 	<p>

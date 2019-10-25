@@ -1,7 +1,7 @@
 {
   "name": "shodan-client",
   "version": "3.1.4",
-  "description": "👀 A Node.js/JavaScript library for accessing the new Shodan API",
+  "description": "👀 A Node.js/JavaScript library for accessing the Shodan API",
   "keywords": [
     "node",
     "Shodan",
