@@ -227,7 +227,7 @@ Information of the actual APi version.
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### Streams
+### Streams
 
 From here requests documented [here](https://developer.shodan.io/api/stream).
 
@@ -266,7 +266,7 @@ Only returns banner data for the list of specified hosts. This stream provides a
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
-### Exploits
+### Exploits
 
 From here requests documented [here](https://developer.shodan.io/api/exploits/rest).
 
