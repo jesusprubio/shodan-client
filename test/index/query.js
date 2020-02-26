@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('query', () => {
@@ -28,25 +28,25 @@ describe('query', () => {
 
   it('should fail if the HTTP request fails', async function t() {
     utilsTest.insist(this);
-    utilsTest.throwsAsync(() => client.query('a'), /request.get : 40/);
+    utilsTest.throwsAsync(() => client.query('a'), /got.get : Response code 401/);
   });
 
   it('should have into account the "timeout" option', async function t() {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.query('a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
-  // TODO: Endpoint seems not to work.
-  it.skip('should return a list with a valid key', async function t() {
-    if (!shodanKey) {
+  // TODO
+  it.skip('should return a list with a valid key, endpoint not working?', async function t() {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.query(shodanKey);
+    const res = await client.query(apiKey);
 
     assert.deepEqual(Object.keys(res), ['total', 'matches']);
     assert.ok(typeof res.matches[0].votes, 'number');

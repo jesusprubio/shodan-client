@@ -9,12 +9,14 @@
 
 'use strict';
 
+const assert = require('assert');
+
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('scan', () => {
@@ -31,7 +33,7 @@ describe('scan', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.scan('8.8.8.8', 'a'),
-      /request.post : 40/,
+      /got.post : Response code 401/,
     );
   });
 
@@ -39,19 +41,19 @@ describe('scan', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.scan('8.8.8.8', 'a', { timeout: 1 }),
-      /request.post : Error: ETIMEDOUT/,
+      /got.post : Timeout awaiting/,
     );
   });
 
   it('should work for a valid IP', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
+
     utilsTest.insist(this);
 
-    utilsTest.throwsAsync(
-      () => client.scan('8.8.8.8', 'a', { timeout: 1 }),
-      /request.get : 400 - {"error":"One of your networks has recently/,
-    );
+    const res = await client.scan('8.8.8.8/24', apiKey);
+
+    assert.equal(res.error, 'One of your networks has recently been requested and wont get scanned again');
   });
 });

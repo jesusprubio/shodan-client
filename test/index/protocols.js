@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('protocols', () => {
@@ -28,24 +28,24 @@ describe('protocols', () => {
 
   it('should fail if the HTTP request fails', async function t() {
     utilsTest.insist(this);
-    utilsTest.throwsAsync(() => client.protocols('a'), /request.get : 40/);
+    utilsTest.throwsAsync(() => client.protocols('a'), /got.get : Response code 401/);
   });
 
   it('should have into account the "timeout" option', async function t() {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.protocols('a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return supported protocols with a valid key', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.protocols(shodanKey);
+    const res = await client.protocols(apiKey);
 
     assert.ok(typeof res.sip, 'string');
     assert.ok(true);

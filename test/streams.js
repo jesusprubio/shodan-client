@@ -38,7 +38,7 @@ describe('streams:banner', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.banners('a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 });
@@ -60,7 +60,7 @@ describe('streams:asn', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.asn('a', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 });
@@ -82,7 +82,7 @@ describe('streams:countries', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.countries('a', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 });
@@ -104,7 +104,7 @@ describe('streams:ports', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.streams.ports('a', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 });

@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('search', () => {
@@ -33,7 +33,7 @@ describe('search', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.search('asterisk', 'a'),
-      /request.get : 40/,
+      /got.get : Response code 401/,
     );
   });
 
@@ -41,17 +41,17 @@ describe('search', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.search('asterisk', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should work for a valid query', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.search('asterisk port:5060', shodanKey);
+    const res = await client.search('asterisk port:5060', apiKey);
 
     assert.deepEqual(Object.keys(res), ['matches', 'total']);
     assert.deepEqual(Object.keys(res.matches[0]), [

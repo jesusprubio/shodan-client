@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.1.6] - 2020-02-26
+
+### ✏️ Changed
+
+- Dependency package `request` to `got`.
+- Major refactor to keep things simpler.
+- Dependencies update.
+
+### 🐛 Fixed
+
+- Methods `scan` and `scanInternet`.
+
 ## [3.1.5] - 2019-10-25
 
 ### ✏️ Changed
@@ -142,7 +154,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Avoiding to print the key.
 
-[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.5...HEAD
+[unreleased]: https://github.com/IBMResearch/jlocke/compare/3.1.6...HEAD
+[3.1.6]: https://github.com/IBMResearch/jlocke/compare/3.1.5...3.1.6
 [3.1.5]: https://github.com/IBMResearch/jlocke/compare/3.1.4...3.1.5
 [3.1.4]: https://github.com/IBMResearch/jlocke/compare/3.1.3...3.1.4
 [3.1.3]: https://github.com/IBMResearch/jlocke/compare/3.1.2...3.1.3

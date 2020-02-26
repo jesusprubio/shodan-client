@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('host', () => {
@@ -33,61 +33,19 @@ describe('host', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.host('8.8.8.8', 'a'),
-      /request.get : 40/,
+      /got.get : Response code 401/,
     );
   });
 
   it('should return data for an active host', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     // The HTTP API fails a lot randomly.
     utilsTest.insist(this);
 
-    const res = await client.host('8.8.8.8', shodanKey);
+    const res = await client.host('8.8.8.8', apiKey);
 
-    // const res = await client.host('8.8.8.8', shodanKey, { minify: true, history: true });
-    assert.deepEqual(Object.keys(res), [
-      'city',
-      'region_code',
-      'os',
-      'tags',
-      'ip',
-      'isp',
-      'area_code',
-      'dma_code',
-      'last_update',
-      'country_code3',
-      'country_name',
-      'hostnames',
-      'postal_code',
-      'longitude',
-      'country_code',
-      'ip_str',
-      'latitude',
-      'org',
-      'data',
-      'asn',
-      'ports',
-    ]);
-    assert.deepEqual(Object.keys(res.data[0]), [
-      '_shodan',
-      'hash',
-      'os',
-      'opts',
-      'ip',
-      'isp',
-      'port',
-      'hostnames',
-      'location',
-      'timestamp',
-      'domains',
-      'org',
-      'data',
-      'asn',
-      'transport',
-      'ip_str',
-    ]);
     assert.equal(res.data[0].isp, 'Google');
   });
 
@@ -95,7 +53,7 @@ describe('host', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.host('8.8.8.8', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 });

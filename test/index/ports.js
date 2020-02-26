@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 describe('ports', () => {
   it('should fail if "key" parameter no present', async () =>
@@ -27,24 +27,24 @@ describe('ports', () => {
 
   it('should fail if the HTTP request fails', async function t() {
     utilsTest.insist(this);
-    utilsTest.throwsAsync(() => client.ports('a'), /request.get : 40/);
+    utilsTest.throwsAsync(() => client.ports('a'), /got.get : Response code 401/);
   });
 
   it('should have into account the "timeout" option', async function t() {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.ports('a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return supported ports with a valid key', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.ports(shodanKey);
+    const res = await client.ports(apiKey);
 
     assert.equal(res[0], 7);
   });

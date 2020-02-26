@@ -15,9 +15,9 @@ const net = require('net');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('dnsResolve', () => {
@@ -37,7 +37,7 @@ describe('dnsResolve', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsResolve('ibm.com,google.com', 'a'),
-      /request.get : 40/,
+      /got.get : Response code 401/,
     );
   });
 
@@ -45,17 +45,17 @@ describe('dnsResolve', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsResolve('ibm.com,google.com', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return correct result for valid hostnames', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.dnsResolve('ibm.com,google.com', shodanKey);
+    const res = await client.dnsResolve('ibm.com,google.com', apiKey);
     assert.deepEqual(Object.keys(res), ['google.com', 'ibm.com']);
     assert.ok(net.isIP(res['ibm.com']));
   });
@@ -78,7 +78,7 @@ describe('dnsReverse', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsReverse('8.8.8.8,9.9.9.9', 'a'),
-      /request.get : 40/,
+      /got.get : Response code 401/,
     );
   });
 
@@ -86,17 +86,17 @@ describe('dnsReverse', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.dnsReverse('8.8.8.8,9.9.9.9', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return correct result for valid ips', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.dnsReverse('8.8.8.8,9.9.9.9', shodanKey);
+    const res = await client.dnsReverse('8.8.8.8,9.9.9.9', apiKey);
 
     assert.deepEqual(Object.keys(res), ['8.8.8.8', '9.9.9.9']);
     assert.ok(typeof res['8.8.8.8'][0], 'string');

@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('services', () => {
@@ -28,24 +28,24 @@ describe('services', () => {
 
   it('should fail if the HTTP request fails', async function t() {
     utilsTest.insist(this);
-    utilsTest.throwsAsync(() => client.services('a'), /request.get : 40/);
+    utilsTest.throwsAsync(() => client.services('a'), /got.get : Response code 401/);
   });
 
   it('should have into account the "timeout" option', async function t() {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.services('a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return the supported list', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.services(shodanKey);
+    const res = await client.services(apiKey);
 
     assert.equal(res['5060'], 'SIP');
   });

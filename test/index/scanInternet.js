@@ -9,12 +9,14 @@
 
 'use strict';
 
+const assert = require('assert');
+
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('scanInternet', () => {
@@ -40,7 +42,7 @@ describe('scanInternet', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.scanInternet(5065, 'sip', 'a'),
-      /request.post : 40/,
+      /got.post : Response code 401/,
     );
   });
 
@@ -48,19 +50,18 @@ describe('scanInternet', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.scanInternet(5065, 'sip', 'a', { timeout: 1 }),
-      /request.post : Error: ETIMEDOUT/,
+      /got.post : Timeout awaiting/,
     );
   });
 
   it('should work for a valid port/protocol combination', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
+    
+    const res = await client.scanInternet(5065, 'sip', apiKey);
 
-    utilsTest.throwsAsync(
-      () => client.scan('8.8.8.8', 'a', { timeout: 1 }),
-      /request.get : 401 - {"error":"Please contact support/,
-    );
+    assert.equal(res.error, 'Please contact support@shodan.io to perform on-demand scans of the Internet');
   });
 });

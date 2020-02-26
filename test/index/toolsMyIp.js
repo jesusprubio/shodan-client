@@ -15,9 +15,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('toolsMyip', () => {
@@ -27,26 +27,26 @@ describe('toolsMyip', () => {
       /You must provide a valid API key/,
     ));
 
-  // skip: This method is public.
-  it.skip('should fail if the HTTP request fails', async function t() {
+  // TODO
+  it.skip('should fail if the HTTP request fails (skip, public endpoint!)', async function t() {
     utilsTest.insist(this);
-    utilsTest.throwsAsync(() => client.toolsMyip('a'), /request.get : 40/);
+    utilsTest.throwsAsync(() => client.toolsMyip('a'), /got.get : Response code 401/);
   });
 
   it('should have into account the "timeout" option', async function t() {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.toolsMyip('a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return a valid IP address', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    assert.ok(net.isIP(await client.toolsMyip('shodanKey')));
+    assert.ok(net.isIP(await client.toolsMyip(apiKey)) === 4);
   });
 });

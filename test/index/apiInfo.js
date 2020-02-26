@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('apiInfo', () => {
@@ -28,34 +28,25 @@ describe('apiInfo', () => {
 
   it('should fail if the HTTP request fails', async function t() {
     utilsTest.insist(this);
-    utilsTest.throwsAsync(() => client.apiInfo('a'), /request.get : 40/);
+    utilsTest.throwsAsync(() => client.apiInfo('a'), /got.get : Response code 401/);
   });
 
   it('should have into account the "timeout" option', async function t() {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.apiInfo('a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return correct data for a valid key', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.apiInfo(shodanKey);
+    const res = await client.apiInfo(apiKey);
 
-    assert.deepEqual(Object.keys(res), [
-      'https',
-      'unlocked',
-      'unlocked_left',
-      'telnet',
-      'scan_credits',
-      'plan',
-      'query_credits',
-    ]);
     assert.equal(res.https, true);
     assert.equal(res.unlocked, true);
     assert.equal(res.telnet, true);

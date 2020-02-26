@@ -14,9 +14,9 @@ const assert = require('assert');
 const client = require('../..');
 const utilsTest = require('../utils');
 
-let shodanKey;
+let apiKey;
 if (process.env.KEY_TEST) {
-  shodanKey = process.env.KEY_TEST;
+  apiKey = process.env.KEY_TEST;
 }
 
 describe('count', () => {
@@ -33,7 +33,7 @@ describe('count', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.count('asterisk', 'a'),
-      /request.get : 40/,
+      /got.get : Response code 401/,
     );
   });
 
@@ -41,32 +41,30 @@ describe('count', () => {
     utilsTest.insist(this);
     utilsTest.throwsAsync(
       () => client.count('asterisk', 'a', { timeout: 1 }),
-      /request.get : Error: ETIMEDOUT/,
+      /got.get : Timeout awaiting/,
     );
   });
 
   it('should return a lot for a common service', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.count('asterisk', shodanKey);
+    const res = await client.count('asterisk', apiKey);
 
-    assert.deepEqual(Object.keys(res), ['matches', 'total']);
     assert.deepEqual(res.matches, []);
     assert.ok(res.total > 10);
   });
 
   it('should return 0 for a non existent service', async function t() {
-    if (!shodanKey) {
+    if (!apiKey) {
       this.skip();
     }
     utilsTest.insist(this);
 
-    const res = await client.count('nonexistentservice', shodanKey);
+    const res = await client.count('nonexistentservice', apiKey);
 
-    assert.deepEqual(Object.keys(res), ['matches', 'total']);
     assert.deepEqual(res.matches, []);
     assert.equal(res.total, 0);
   });
