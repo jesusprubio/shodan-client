@@ -147,6 +147,15 @@ Use this method to request Shodan to crawl the Internet for a specific port. Thi
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
 
+### `async scanResult(ips, key, opts)`
+
+Use this method to request the result of a scan you asked for before.
+
+- `id` (string) - Job identifier returned for the `scan` method.
+- `key` (string) - SHODAN API key.
+- `opts`, an object with:
+  - `timeout` (number) - Connection timeout in ms. (default: 5000)
+
 ### `async services(key, opts)`
 
 This method returns an object containing all the services that the Shodan crawlers look at. It can also be used as a quick and practical way to resolve a port number to the name of a service.
@@ -285,9 +294,8 @@ Search across a variety of data sources for exploits and use facets to get summa
 
 This is similar to the last one but it doesn't return any exploit data, only the total count.
 
-- `query`
-- `key`
-- `opts`
-
-  - `timeout`
-  - `facets`
+- `query` (string) - Search query used to search the database of known exploits. To see which filters are supported please check the API documentation.
+- `key` (string) - SHODAN API key.
+- `opts`, an object with:
+  - `timeout` (number) - Connection timeout in ms. (default: 5000)
+  - `facets` (string, optional) - A comma-separated list of properties to get summary information on. To see which filters are supported please check the API documentation. (default: null)

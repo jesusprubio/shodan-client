@@ -25,6 +25,7 @@ describe('index', () => {
       'ports',
       'protocols',
       'scan',
+      'scanResult',
       'scanInternet',
       'services',
       'query',
