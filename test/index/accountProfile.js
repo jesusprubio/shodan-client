@@ -26,7 +26,7 @@ describe('accountProfile', () => {
       /You must provide a valid API key/,
     ));
 
-/*   it('should fail if the HTTP request fails', async function t() {
+   it('should fail if the HTTP request fails', async function t() {
     utilsTest.insist(this);
     utilsTest.throwsAsync(() => client.accountProfile('a'), /got.get : Response code 401/);
   });
@@ -55,5 +55,5 @@ describe('accountProfile', () => {
     ]);
     assert.equal(res.member, true);
     assert.ok(typeof res.credits, 'number');
-  }); */
+  });
 });
