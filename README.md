@@ -83,7 +83,7 @@ Returns all services that have been found on the given host IP. Supported option
 
 ### `async search(query, key, opts)`
 
-Search Shodan using the same query syntax as the website and use facets to get summary information for different properties. This method may use API query credits depending on usage, please check the [API documentation](https://developer.shodan.io/api#shodan-host-search).
+Search using the same query syntax as the website and use facets to get summary information for different properties. This method may use API query credits depending on usage, please check the [API documentation](https://developer.shodan.io/api#shodan-host-search).
 
 - `query` (string) - The provided string is used to search the database of banners in Shodan, with the additional option to provide filters inside the search query using a "filter:value" format. For example, the following search query would find Apache webservers located in Germany: "apache country:DE". To see which filters are supported please check the API documentation.
 - `key` (string) - SHODAN API key.
@@ -105,7 +105,7 @@ This method behaves identical to "search" with the only difference that this met
 
 ### `async searchTokens(query, key, opts)`
 
-Search Shodan using the same query syntax as the website and use facets to get summary information for different properties. This method may use API query credits depending on usage, please check the [API documentation](https://developer.shodan.io/api#shodan-host-search-tokens).
+Search using the same query syntax as the website and use facets to get summary information for different properties. This method may use API query credits depending on usage, please check the [API documentation](https://developer.shodan.io/api#shodan-host-search-tokens).
 
 - `query` (string) - Same than for `search` method.
 - `key` (string) - SHODAN API key.
@@ -114,7 +114,7 @@ Search Shodan using the same query syntax as the website and use facets to get s
 
 ### `async ports(key, opts)`
 
-This method returns a list of port numbers that the crawlers are looking for.
+List of port numbers that the crawlers are looking for.
 
 - `key` (string) - SHODAN API key.
 - `opts`, an object with:
@@ -122,7 +122,7 @@ This method returns a list of port numbers that the crawlers are looking for.
 
 ### `async protocols(key, opts)`
 
-This method returns an object containing all the protocols that can be used when launching an Internet scan.
+All the protocols that can be used when launching an Internet scan.
 
 - `key` (string) - SHODAN API key.
 - `opts`, an object with:
@@ -130,7 +130,7 @@ This method returns an object containing all the protocols that can be used when
 
 ### `async scan(ips, key, opts)`
 
-Use this method to request Shodan to crawl a network. This method uses API scan credits, please check the [API documentation](https://developer.shodan.io/api#shodan-scan).
+Ask Shodan to crawl a network. This method uses API scan credits, please check the [API documentation](https://developer.shodan.io/api#shodan-scan).
 
 - `ips` (string) - A comma-separated list of IPs or netblocks (in CIDR notation) that should get crawled.
 - `key` (string) - SHODAN API key.
@@ -139,7 +139,7 @@ Use this method to request Shodan to crawl a network. This method uses API scan 
 
 ### `async scanInternet(port, protocol, key, opts)`
 
-Use this method to request Shodan to crawl the Internet for a specific port. This method is restricted to security researchers and companies with a Shodan Data license, please check the [API documentation for more details.
+Ask Shodan to crawl the Internet for a specific port and protocol. This method is restricted to security researchers and companies with a Shodan Data license, please check the [API documentation for more details.
 
 - `port` (number) - The port that Shodan should crawl the Internet for.
 - `protocol` (string) - The name of the protocol that should be used to interrogate the port. See /shodan/protocols for a list of supported protocols.
@@ -149,7 +149,7 @@ Use this method to request Shodan to crawl the Internet for a specific port. Thi
 
 ### `async scanResult(ips, key, opts)`
 
-Use this method to request the result of a scan you asked for before.
+Get the result of a scan you asked for before.
 
 - `id` (string) - Job identifier returned for the `scan` method.
 - `key` (string) - SHODAN API key.
@@ -158,7 +158,7 @@ Use this method to request the result of a scan you asked for before.
 
 ### `async services(key, opts)`
 
-This method returns an object containing all the services that the Shodan crawlers look at. It can also be used as a quick and practical way to resolve a port number to the name of a service.
+All the services that the Shodan crawlers look at. It can also be used as a quick and practical way to resolve a port number to the name of a service.
 
 - `key` (string) - SHODAN API key.
 - `opts`, an object with:
@@ -238,11 +238,11 @@ Information of the actual APi version.
 
 ### Streams
 
-From here requests documented [here](https://developer.shodan.io/api/stream).
+From here the endpoints documented [at this section](https://developer.shodan.io/api/stream).
 
 #### `async streams.banners(key, opts)`
 
-This stream provides ALL collected data. Use this stream if you need access to everything and/ or want to store your own Shodan database locally. If you only care about specific ports, please use the Ports stream.
+Provides all collected data. Use this stream if you need access to everything and/ or want to store your own Shodan database locally. If you only care about specific ports, please use the Ports stream.
 
 - `key` (string) - SHODAN API key.
 - `opts`, an object with:
@@ -250,7 +250,7 @@ This stream provides ALL collected data. Use this stream if you need access to e
 
 #### `async streams.asn(asn, key, opts)`
 
-This stream provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in devices located in certain ASNs.
+Provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in devices located in certain ASNs.
 
 - `asn` (string) - Comma-separated list of ASNs; example "3303,32475"
 - `key` (string) - SHODAN API key.
@@ -259,7 +259,7 @@ This stream provides a filtered, bandwidth-saving view of the Banners stream in 
 
 #### `async streams.countries(countries, key, opts)`
 
-This stream provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in devices located in certain countries.
+Provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in devices located in certain countries.
 
 - `countries` (string) - Comma-separated list of countries indicated by their 2 letter code; example "DE,US"
 - `key` (string) - SHODAN API key.
@@ -268,7 +268,7 @@ This stream provides a filtered, bandwidth-saving view of the Banners stream in 
 
 #### `async streams.ports(ports, key, opts)`
 
-Only returns banner data for the list of specified hosts. This stream provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in a specific list of ports.
+Only returns banner data for the list of specified hosts. Provides a filtered, bandwidth-saving view of the Banners stream in case you are only interested in a specific list of ports.
 
 - `ports` (string) - Comma-separated list of ports; example "1434,27017,6379"
 - `key` (string) - SHODAN API key.
@@ -277,7 +277,7 @@ Only returns banner data for the list of specified hosts. This stream provides a
 
 ### Exploits
 
-From here requests documented [here](https://developer.shodan.io/api/exploits/rest).
+From here the endpoints documented [at this section](https://developer.shodan.io/api/exploits/rest).
 
 #### `async exploits.search(query, key, opts)`
 
