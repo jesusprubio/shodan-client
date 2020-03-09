@@ -54,6 +54,8 @@ describe('scanResult', () => {
 
     const res = await client.scanResult('a', apiKey);
 
+    // Do not create new scans for testing to avoid
+    // scan credits consumption.
     assert.equal(res.error, 'Scan not found');
   });
 });

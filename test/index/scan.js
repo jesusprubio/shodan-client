@@ -54,6 +54,7 @@ describe('scan', () => {
 
     const res = await client.scan('8.8.8.8/24', apiKey);
 
+    // We don't randomize this to avoid scan credits consuption.
     assert.equal(res.error, 'One of your networks has recently been requested and wont get scanned again');
   });
 });
