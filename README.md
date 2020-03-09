@@ -54,12 +54,12 @@ You can find more examples in the [tests](test).
 
 :sunglasses: If you'd like to help please take a look to [this file](.github/CONTRIBUTING.md).
 
-### Tests
+### Test
 
-To run the tests please pass your API key in the next way:
+To run the tests you need set your API key.
 
 ```sh
-KEY_TEST=YOURKEYHERE npm test
+API_KEY=YOUR_KEY_HERE npm test
 ```
 
 ## API
@@ -299,3 +299,13 @@ This is similar to the last one but it doesn't return any exploit data, only the
 - `opts`, an object with:
   - `timeout` (number) - Connection timeout in ms. (default: 5000)
   - `facets` (string, optional) - A comma-separated list of properties to get summary information on. To see which filters are supported please check the API documentation. (default: null)
+
+## Error handling
+
+The response can include a message containing the reason for the failure. In example:
+
+```json
+{
+ "error": "Invalid IP"
+}
+```

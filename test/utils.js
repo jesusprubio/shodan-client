@@ -5,40 +5,36 @@
   https://opensource.org/licenses/MIT.
 */
 
-// Some helpers for the tests.
-
 'use strict';
 
-const assert = require('assert');
-const sleep = require('system-sleep');
+const test = require('ava');
 
-// A custom version of [assert.throws](https://nodejs.org/api/assert.html#
-// assert_assert_throws_block_error_message) with async (through promises) support.
-//
-// - `block` (function) - Piece of code (returning a promise) to be checked.
-// - `errRegex` (object) - Regular expresion to confirm the expected error.
-//
-// Ref: https://wietse.loves.engineering/testing-promises-with-mocha-90df8b7d2e35
-module.exports.throwsAsync = async (block, errorRexp) => {
-  try {
-    await block();
-  } catch (e) {
-    // To be consistent with the Node.js "assert.throws" behavior we reuse it.
-    if (errorRexp) {
-      assert.throws(() => {
-        throw e;
-      }, errorRexp);
-    }
-    // We need this return because we're catching the thrown error,
-    // if not, the next assert.fail would be reached when the regexp matches.
-    return;
-  }
+const utils = require('../lib/utils');
 
-  assert.fail('Missing expected exception');
-};
+test('should fail if "section" parameter no present', async t => {
+  await t.throwsAsync(
+    async () => { await utils.request() },
+    { message: 'Required parameter: section, partial' }
+  );
+});
 
-// The HTTP API fails a lot randomly.
-module.exports.insist = context => {
-  context.retries(3);
-  sleep(3000);
-};
+test('should fail if "partial" parameter no present', async t => {
+  await t.throwsAsync(
+    async () => { await utils.request('a') },
+    { message: 'Required parameter: section, partial' }
+  );
+});
+
+test('should fail if "params" option no present', async t => {
+  await t.throwsAsync(
+    async () => { await utils.request('a', 'a') },
+    { message: 'You must provide a valid API key' }
+  );
+});
+
+test('should fail if "key" parameter no present', async t => {
+  await t.throwsAsync(
+    async () => { await utils.request('a', 'a', { params: {}}) },
+    { message: 'You must provide a valid API key' }
+  );
+});

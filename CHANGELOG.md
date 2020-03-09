@@ -16,12 +16,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [3.2.0] - 2020-02-27
+## [3.2.0] - 2020-03-09
 
 ### ✏️ Changed
 
 - Dependency package `request` to `got`.
 - Major refactor to keep things simpler.
+- Tests changed from `mocha` to `ava`.
 - Dependencies update.
 
 ### 🐛 Fixed
