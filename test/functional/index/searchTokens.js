@@ -39,7 +39,7 @@ test('should have into account the "timeout" option', async t => {
   );
 });
 
-test('should return a services for a valid query', async t => {
+test('should return some services for a valid query', async t => {
   await helpers.sleep();
 
   const res = await client.searchTokens('asterisk port:5060',process.env.API_KEY);
