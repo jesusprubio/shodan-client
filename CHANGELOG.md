@@ -159,17 +159,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Avoiding to print the key.
 
-[unreleased]: https://github.com/jesusprubio/shodan-client/compare/3.2.0...HEAD
-[3.2.0]: https://github.com/jesusprubio/shodan-client/compare/3.1.5...3.2.0
-[3.1.5]: https://github.com/jesusprubio/shodan-client/compare/3.1.4...3.1.5
-[3.1.4]: https://github.com/jesusprubio/shodan-client/compare/3.1.3...3.1.4
-[3.1.3]: https://github.com/jesusprubio/shodan-client/compare/3.1.2...3.1.3
-[3.1.2]: https://github.com/jesusprubio/shodan-client/compare/3.1.1...3.1.2
-[3.1.1]: https://github.com/jesusprubio/shodan-client/compare/3.1.0...3.1.1
-[3.1.0]: https://github.com/jesusprubio/shodan-client/compare/3.0.3...3.1.0
-[3.0.3]: https://github.com/jesusprubio/shodan-client/compare/3.0.2...3.0.3
-[3.0.2]: https://github.com/jesusprubio/shodan-client/compare/3.0.1...3.0.2
-[3.0.1]: https://github.com/jesusprubio/shodan-client/compare/3.0.0...3.0.1
-[3.0.0]: https://github.com/jesusprubio/shodan-client/compare/2.0.0...3.0.0
-[2.0.0]: https://github.com/jesusprubio/shodan-client/compare/1.1.0...2.0.0
-[1.1.0]: https://github.com/jesusprubio/shodan-client/compare/0c75dafa5646bd47346981ae307686784adfa002...1.1.0
+[unreleased]: https://github.com/jesusprubio/shodan-client/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/jesusprubio/shodan-client/compare/v3.1.5...v3.2.0
+[3.1.5]: https://github.com/jesusprubio/shodan-client/compare/v3.1.4...v3.1.5
+[3.1.4]: https://github.com/jesusprubio/shodan-client/compare/v3.1.3...v3.1.4
+[3.1.3]: https://github.com/jesusprubio/shodan-client/compare/v3.1.2...v3.1.3
+[3.1.2]: https://github.com/jesusprubio/shodan-client/compare/v3.1.1...v3.1.2
+[3.1.1]: https://github.com/jesusprubio/shodan-client/compare/v3.1.0...v3.1.1
+[3.1.0]: https://github.com/jesusprubio/shodan-client/compare/v3.0.3...v3.1.0
+[3.0.3]: https://github.com/jesusprubio/shodan-client/compare/v3.0.2...v3.0.3
+[3.0.2]: https://github.com/jesusprubio/shodan-client/compare/v3.0.1...v3.0.2
+[3.0.1]: https://github.com/jesusprubio/shodan-client/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/jesusprubio/shodan-client/compare/v2.0.0...v3.0.0
+[2.0.0]: https://github.com/jesusprubio/shodan-client/compare/v1.1.0...v2.0.0
+[1.1.0]: https://github.com/jesusprubio/shodan-client/compare/0c75dafa5646bd47346981ae307686784adfa002...v1.1.0
